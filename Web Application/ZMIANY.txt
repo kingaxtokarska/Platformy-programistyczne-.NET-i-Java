@@ -1,0 +1,3 @@
+1) -komunikacja z bazą danych, modele, kontrolery, dodanie nugetów
+2) -widoki list, create, edit, delete, details dla tabel Pracownik, Stanowisko, Dzial, Godzinypracy, Wejscia, Wyjscia
+   -nowe nugety: Microsotf.EntityFrameworkCore.Sqlite, Microsotf.EntityFrameworkCore.SqlServer, Serilog,                          Serilog.Sinks.Console, Seriog.Sinks.File
