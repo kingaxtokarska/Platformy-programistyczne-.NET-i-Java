@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebApplication5.Models.Wejscia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wejścia</h1>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Data wejscia", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Godzina wejscia", "Index", new { sortOrder = ViewBag.TimeSortParm })
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Imie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Nazwisko)
+            </td>
+            <td>
+                @item.DataWejscia.ToString("yyyy-MM-dd")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GodzinaWejscia)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

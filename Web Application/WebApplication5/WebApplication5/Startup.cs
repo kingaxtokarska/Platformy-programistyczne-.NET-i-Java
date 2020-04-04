@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApplication5.Models;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace WebApplication5
 {
@@ -27,6 +28,16 @@ namespace WebApplication5
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Information()
+            .WriteTo.Console()
+            .WriteTo.File("log.txt",
+            rollingInterval: RollingInterval.Day,
+            rollOnFileSizeLimit: true)
+            .CreateLogger();
+            Log.Information("Hello, Serilog!");
+            Log.CloseAndFlush();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

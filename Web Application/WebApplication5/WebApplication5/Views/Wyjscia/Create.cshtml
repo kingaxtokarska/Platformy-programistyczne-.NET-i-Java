@@ -1,0 +1,39 @@
+﻿@model WebApplication5.Models.Wyjscia
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Wyjscia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdPracownik" class="control-label"></label>
+                <select asp-for="IdPracownik" class ="form-control" asp-items="ViewBag.IdPracownik"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataWyjscia" class="control-label"></label>
+                <input asp-for="DataWyjscia" class="form-control" />
+                <span asp-validation-for="DataWyjscia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GodzinaWyjscia" class="control-label"></label>
+                <input asp-for="GodzinaWyjscia" class="form-control" />
+                <span asp-validation-for="GodzinaWyjscia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

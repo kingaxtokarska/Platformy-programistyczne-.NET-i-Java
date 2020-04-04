@@ -1,0 +1,39 @@
+﻿@model WebApplication5.Models.Stanowisko
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Stanowisko</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NazwaStanowisko" class="control-label"></label>
+                <input asp-for="NazwaStanowisko" class="form-control" />
+                <span asp-validation-for="NazwaStanowisko" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wynagrodzenie" class="control-label"></label>
+                <input asp-for="Wynagrodzenie" class="form-control" />
+                <span asp-validation-for="Wynagrodzenie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdDzial" class="control-label"></label>
+                <select asp-for="IdDzial" class ="form-control" asp-items="ViewBag.IdDzial"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

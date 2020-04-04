@@ -43,9 +43,16 @@ namespace WebApplication5.Models
 
             modelBuilder.Entity<Godzinypracy>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.idGodzinyPracy)
+                    .HasName("PRIMARY");
 
                 entity.ToTable("godzinypracy");
+
+                entity.Property(e => e.idGodzinyPracy).HasColumnName("idGodzinyPracy");
+
+                entity.Property(e => e.idGodzinyPracy)
+                    .HasColumnName("idGodzinyPracy")
+                    .HasColumnType("int");
 
                 entity.HasIndex(e => e.IdDzial)
                     .HasName("FK_DzialGodziny");
@@ -159,12 +166,19 @@ namespace WebApplication5.Models
 
             modelBuilder.Entity<Wejscia>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.idWejscie)
+                    .HasName("PRIMARY");
 
                 entity.ToTable("wejscia");
 
+                entity.Property(e => e.idWejscie).HasColumnName("idWejscie");
+
+                entity.Property(e => e.idWejscie)
+                    .HasColumnName("idWejscie")
+                    .HasColumnType("int");
+
                 entity.HasIndex(e => e.IdPracownik)
-                    .HasName("FK_PracownikWejscie");
+                   .HasName("FK_PracownikWejscie");
 
                 entity.Property(e => e.DataWejscia)
                     .HasColumnName("dataWejscia")
@@ -183,11 +197,19 @@ namespace WebApplication5.Models
                     .HasConstraintName("FK_PracownikWejscie");
             });
 
+
             modelBuilder.Entity<Wyjscia>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.idWyjscie)
+                    .HasName("PRIMARY");
 
                 entity.ToTable("wyjscia");
+
+                entity.Property(e => e.idWyjscie).HasColumnName("idWyjscie");
+
+                entity.Property(e => e.idWyjscie)
+                    .HasColumnName("idWyjscie")
+                    .HasColumnType("int");
 
                 entity.HasIndex(e => e.IdPracownik)
                     .HasName("FK_PracownikWyjscie");

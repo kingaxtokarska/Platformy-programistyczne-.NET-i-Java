@@ -3,6 +3,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">NAZWA FIRMY</h1>
+    <div>
+        @Html.ActionLink("Pracownicy", "Index", "Pracownik")<br />
+        @Html.ActionLink("Stanowiska", "Index", "Stanowisko")<br />
+        @Html.ActionLink("Dzialy", "Index", "Dzial")<br />
+        @Html.ActionLink("Godziny pracy", "Index", "Godzinypracy")<br />
+        @Html.ActionLink("Wejscia", "Index", "Wejscia")<br />
+        @Html.ActionLink("Wyjscia", "Index", "Wyjscia")
+    </div>
 </div>
