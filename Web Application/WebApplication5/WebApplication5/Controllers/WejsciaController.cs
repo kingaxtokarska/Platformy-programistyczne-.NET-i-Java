@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using WebApplication5.Models;
 
 namespace WebApplication5.Controllers
@@ -27,7 +28,7 @@ namespace WebApplication5.Controllers
             ViewBag.TimeSortParm = sortOrder == "godzina" ? "godzina_desc" : "godzina";
 
             var wejscia = from we in (_context.Wejscia.Include(we => we.IdPracownikNavigation))
-                             select we;
+                          select we;
 
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -70,6 +71,77 @@ namespace WebApplication5.Controllers
             return View(await wejscia.ToListAsync());
         }
 
+        public async Task<IActionResult> Delays(DateTime data)
+        {
+
+            var wejscia = from we in (_context.Wejscia.Include(we => we.IdPracownikNavigation).ThenInclude(we => we.IdStanowiskoNavigation).ThenInclude(we => we.IdDzialNavigation))
+                          join g in (_context.Godzinypracy.Include(we => we.IdDzialNavigation)) on new
+                          { X1 = we.IdPracownikNavigation.IdStanowiskoNavigation.IdDzialNavigation.IdDzial, X2 = we.DzienTygodnia }
+                          equals new { X1 = g.IdDzialNavigation.IdDzial, X2 = g.DzienTygodnia }
+                          where (TimeSpan.Compare(we.GodzinaWejscia, g.PoczatekPracy) == 1 && (we.DataWejscia == data || data == default)) 
+                          select we;
+            
+            return View(await wejscia.ToListAsync());
+        }
+
+        public async Task<IActionResult> Worktime(DateTime data)
+        {
+            int rok = data.Year;
+            int miesiac = data.Month;
+            var godzinypracy = from we in (_context.Wejscia.Include(we => we.IdPracownikNavigation).
+                                    ThenInclude(we => we.IdStanowiskoNavigation).
+                                    ThenInclude(we => we.IdDzialNavigation))
+                               join g in (_context.Godzinypracy) on
+                               we.IdPracownikNavigation.IdStanowiskoNavigation.IdDzialNavigation.IdDzial
+                               equals g.IdDzial
+                               join wy in (_context.Wyjscia) on
+                               we.IdPracownikNavigation.IdPracownik
+                               equals wy.IdPracownik
+                               where (we.DzienTygodnia == g.DzienTygodnia && wy.DzienTygodnia == g.DzienTygodnia && we.DataWejscia.Year == rok && we.DataWejscia.Month == miesiac)
+                               select new { wejscia = we, godziny = g, wyjscia = wy };
+
+            List<Podsumowanie> podsumowanielista = new List<Podsumowanie>();
+            foreach (var praca in godzinypracy)
+            {
+                var poczatekpracy = praca.wejscia.GodzinaWejscia;
+                if (praca.wejscia.GodzinaWejscia < praca.godziny.PoczatekPracy)
+                {
+                    poczatekpracy = praca.godziny.PoczatekPracy;
+                }
+                var koniecpracy = praca.wyjscia.GodzinaWyjscia;
+                var nadgodziny = TimeSpan.Zero;
+                if (praca.wyjscia.GodzinaWyjscia > praca.godziny.KoniecPracy)
+                {
+                    koniecpracy = praca.godziny.KoniecPracy;
+                    nadgodziny = praca.wyjscia.GodzinaWyjscia - praca.godziny.KoniecPracy;
+                }
+                var czaspracy = koniecpracy - poczatekpracy;
+                podsumowanielista.Add(new Podsumowanie()
+                {
+                    IdPracownik = praca.wejscia.IdPracownik,
+                    Imie = praca.wejscia.IdPracownikNavigation.Imie,
+                    Nazwisko = praca.wejscia.IdPracownikNavigation.Nazwisko,
+                    CzasPracy = czaspracy.TotalHours,
+                    Nadgodziny = nadgodziny.TotalHours,
+                    Stawka = praca.wejscia.IdPracownikNavigation.IdStanowiskoNavigation.Wynagrodzenie
+                }) ;
+            }
+            var podsumowanie = from p in podsumowanielista
+                               group p by p.IdPracownik into p2
+                               select new Podsumowanie()
+                               {
+                                   IdPracownik = p2.ElementAt(0).IdPracownik,
+                                   Imie = p2.ElementAt(0).Imie,
+                                   Nazwisko = p2.ElementAt(0).Nazwisko,
+                                   CzasPracy = p2.Sum(x => x.CzasPracy),
+                                   Nadgodziny = p2.Sum(x => x.Nadgodziny),
+                                   Wynagrodzenie = p2.Sum(x => x.CzasPracy) * p2.ElementAt(0).Stawka + p2.Sum(x => x.Nadgodziny) * p2.ElementAt(0).Stawka * 1.5,
+                                   WynagrodzenieEuro = p2.Sum(x => x.WynagrodzenieEuro)
+                               };
+                               
+            return View(podsumowanie);
+        }
+
         // GET: Wejscia/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -106,8 +178,12 @@ namespace WebApplication5.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(wejscia);
+                wejscia.DataWejscia = DateTime.Now.Date;
+                wejscia.GodzinaWejscia = DateTime.Now.TimeOfDay;
+                wejscia.DzienTygodnia = DateTime.Now.DayOfWeek.ToString();
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                Log.Information("Hfasfn afkla!");
+                return RedirectToAction(nameof(Index), "Home");
             }
             ViewData["IdPracownik"] = new SelectList(_context.Pracownik, "IdPracownik", "Imie", wejscia.IdPracownik);
             return View(wejscia);

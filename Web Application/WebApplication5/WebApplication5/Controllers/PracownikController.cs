@@ -22,6 +22,7 @@ namespace WebApplication5.Controllers
         // GET: Pracownik
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+
             ViewBag.NameSortParm = sortOrder == "imie" ? "imie_desc" : "imie";
             ViewBag.SurnameSortParm = sortOrder == "nazwisko" ? "nazwisko_desc" : "nazwisko";
             ViewBag.PeselSortParm = sortOrder == "pesel" ? "pesel_desc" : "pesel";
@@ -30,7 +31,7 @@ namespace WebApplication5.Controllers
             ViewBag.EmplacementSortParm = sortOrder == "stanowisko" ? "stanowisko_desc" : "stanowisko";
             ViewBag.SectionSortParm = sortOrder == "dzial" ? "dzial_desc" : "dzial";
 
-            var pracownicy = from p in (_context.Pracownik.Include(p => p.IdStanowiskoNavigation))
+            var pracownicy = from p in (_context.Pracownik.Include(p => p.IdStanowiskoNavigation).ThenInclude(p => p.IdDzialNavigation))
                 select p;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -93,9 +94,6 @@ namespace WebApplication5.Controllers
                     break;
             }
             return View(await pracownicy.ToListAsync()); 
-            
-            //var firmaContext = _context.Pracownik.Include(p => p.IdStanowiskoNavigation);
-                //return View(await firmaContext.ToListAsync());
         }
 
 

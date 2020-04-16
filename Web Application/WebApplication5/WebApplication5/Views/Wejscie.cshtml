@@ -1,16 +1,16 @@
 ﻿@model WebApplication5.Models.Wejscia
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Wejscie";
 }
 
-<h1>Create</h1>
+<h1>Wejscie</h1>
 
-<h4>Wejscie</h4>
+<h4>Wejscia</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Wejscie">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdPracownik" class="control-label"></label>
@@ -24,6 +24,6 @@
 </div>
 
 <div>
-    <a asp-controller="Home" asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 

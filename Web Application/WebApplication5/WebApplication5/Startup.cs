@@ -36,7 +36,6 @@ namespace WebApplication5
             rollOnFileSizeLimit: true)
             .CreateLogger();
             Log.Information("Hello, Serilog!");
-            Log.CloseAndFlush();
 
             if (env.IsDevelopment())
             {

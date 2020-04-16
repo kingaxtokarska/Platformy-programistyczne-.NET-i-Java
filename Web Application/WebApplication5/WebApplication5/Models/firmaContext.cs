@@ -188,6 +188,10 @@ namespace WebApplication5.Models
                     .HasColumnName("godzinaWejscia")
                     .HasColumnType("time");
 
+                entity.Property(e => e.DzienTygodnia)
+                    .HasColumnName("dzienTygodnia")
+                    .HasColumnType("varchar(10)");
+
                 entity.Property(e => e.IdPracownik).HasColumnName("idPracownik");
 
                 entity.HasOne(d => d.IdPracownikNavigation)
@@ -222,6 +226,10 @@ namespace WebApplication5.Models
                     .HasColumnName("godzinaWyjscia")
                     .HasColumnType("time");
 
+                entity.Property(e => e.DzienTygodnia)
+                  .HasColumnName("dzienTygodnia")
+                  .HasColumnType("varchar(10)");
+
                 entity.Property(e => e.IdPracownik).HasColumnName("idPracownik");
 
                 entity.HasOne(d => d.IdPracownikNavigation)
@@ -230,8 +238,7 @@ namespace WebApplication5.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_PracownikWyjscie");
             });
-
-            OnModelCreatingPartial(modelBuilder);
+            
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

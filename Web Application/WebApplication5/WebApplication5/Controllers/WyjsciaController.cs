@@ -106,6 +106,8 @@ namespace WebApplication5.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(wyjscia);
+                wyjscia.DataWyjscia = DateTime.Now.Date;
+                wyjscia.GodzinaWyjscia = DateTime.Now.TimeOfDay;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
