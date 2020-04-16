@@ -14,12 +14,14 @@ namespace WebApplication5.Models
         }
 
         public virtual DbSet<Dzial> Dzial { get; set; }
+        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
         public virtual DbSet<Godzinypracy> Godzinypracy { get; set; }
         public virtual DbSet<Pracownik> Pracownik { get; set; }
         public virtual DbSet<Stanowisko> Stanowisko { get; set; }
         public virtual DbSet<Wejscia> Wejscia { get; set; }
         public virtual DbSet<Wyjscia> Wyjscia { get; set; }
         public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -36,6 +38,30 @@ namespace WebApplication5.Models
                 entity.Property(e => e.NazwaDzial)
                     .IsRequired()
                     .HasColumnName("nazwaDzial")
+                    .HasColumnType("varchar(32)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
+            modelBuilder.Entity<Uzytkownik>(entity =>
+            {
+                entity.HasKey(e => e.IdUzytkownik)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("uzytkownik");
+
+                entity.Property(e => e.IdUzytkownik).HasColumnName("idUzytkownik");
+
+                entity.Property(e => e.NazwaUzytkownik)
+                    .IsRequired()
+                    .HasColumnName("nazwaUzytkownik")
+                    .HasColumnType("varchar(32)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.HasloUzytkownik)
+                    .IsRequired()
+                    .HasColumnName("hasloUzytkownik")
                     .HasColumnType("varchar(32)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
