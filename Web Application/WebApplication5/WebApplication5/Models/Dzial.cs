@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace WebApplication5.Models
 {
@@ -9,7 +8,6 @@ namespace WebApplication5.Models
         {
             Stanowisko = new HashSet<Stanowisko>();
         }
-
         public int IdDzial { get; set; }
         public string NazwaDzial { get; set; }
 

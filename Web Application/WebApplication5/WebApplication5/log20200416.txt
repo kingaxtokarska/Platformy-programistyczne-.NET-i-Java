@@ -1,0 +1,206 @@
+2020-04-16 14:10:30.881 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:12:54.467 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:13:55.741 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:14:45.285 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:14:54.269 +02:00 [INF] Wyświetlono działy
+2020-04-16 14:15:09.206 +02:00 [INF] Wyświetlono działy
+2020-04-16 14:20:36.048 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:22:52.483 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:25:20.358 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:27:19.806 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:29:41.232 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:31:04.715 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:32:08.152 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:33:28.411 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:33:55.167 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 14:34:00.037 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 14:39:19.432 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:43:33.164 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 14:46:21.652 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:21:35.943 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:25:15.064 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:25:50.189 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:25:50.243 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:29:41.793 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:30:46.962 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:31:31.808 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 16:33:53.179 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:36:25.865 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:36:25.907 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:37:34.612 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:38:10.565 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:38:10.602 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:38:58.933 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:39:32.618 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:39:32.671 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:39:40.768 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:39:40.778 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:40:44.609 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:41:11.731 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:41:11.793 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:42:07.899 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:42:20.195 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:43:01.426 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:43:13.649 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:43:54.394 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:44:10.258 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:44:13.528 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:44:23.515 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:45:34.492 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:46:14.427 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:46:16.867 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 16:46:24.407 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 16:46:27.256 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 16:46:27.975 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 16:47:35.653 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:48:45.603 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:48:55.402 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 16:49:32.211 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:50:25.575 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:53:28.198 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 16:56:27.395 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:18:48.978 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:19:48.061 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 17:19:52.881 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 17:20:16.906 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 17:20:18.821 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 17:21:23.401 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:25.997 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:26.666 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:27.358 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:27.934 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:28.646 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:29.283 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:29.934 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:30.544 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:32.629 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:33.287 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:34.211 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:34.849 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:39.271 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:42.753 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:49.159 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:53.446 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:21:59.382 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:27:56.563 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:28:11.441 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 17:30:23.278 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:39.485 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:41.956 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:42.746 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:43.370 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:43.977 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:45.249 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:45.856 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:46.820 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:47.508 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:48.341 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:48.981 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:50.655 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:51.279 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:54.807 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:30:57.507 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:31:00.921 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:31:05.205 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:31:06.856 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:31:12.133 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:31:15.983 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:33:00.060 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 17:33:30.926 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:33:35.775 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:33:40.987 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:34:08.120 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:34:10.984 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 17:34:13.529 +02:00 [INF] Wyświetlono godziny pracy
+2020-04-16 17:35:13.828 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:35:35.538 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:36:02.496 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:36:40.181 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:36:53.881 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:37:04.488 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:37:11.674 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:38:02.830 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:39:30.054 +02:00 [INF] Wyświetlono godziny pracy
+2020-04-16 17:39:46.281 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:40:03.280 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:40:57.663 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:42:39.904 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:42:58.152 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:43:09.452 +02:00 [INF] Kontrola spóźnień
+2020-04-16 17:43:16.176 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:43:24.504 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:43:29.743 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:44:11.627 +02:00 [INF] Podsumowanie miesięczne
+2020-04-16 17:44:17.490 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:19.292 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:19.940 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:20.882 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:21.571 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:22.520 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:23.300 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:24.744 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:25.497 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:33.519 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:36.885 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:42.844 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:44:52.214 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:45:21.754 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:45:21.976 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:45:22.187 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 17:47:09.862 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:47:41.859 +02:00 [INF] Wyświetlono wejścia
+2020-04-16 17:51:26.706 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:51:34.086 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:56:43.660 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 17:57:08.363 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 17:57:11.099 +02:00 [INF] Utworzono nowe wejście
+2020-04-16 17:58:11.846 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 17:58:14.931 +02:00 [INF] Utworzono nowe wyjscie
+2020-04-16 17:58:52.350 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:59:23.395 +02:00 [INF] Utworzono nowego pracownika
+2020-04-16 17:59:23.406 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:59:30.008 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 17:59:42.108 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:00:41.468 +02:00 [INF] Edytowano pracownika 1
+2020-04-16 18:00:41.519 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:00:48.787 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:25.223 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:30.578 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:34.438 +02:00 [INF] Usunięto pracownika 1
+2020-04-16 18:02:34.448 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:38.536 +02:00 [WRN] Nieudana próba usunięcia pracownika
+2020-04-16 18:02:39.418 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:40.886 +02:00 [INF] Nieudana próba wyświetlenia szczegółów pracownika
+2020-04-16 18:02:43.060 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:45.005 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:46.562 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:47.363 +02:00 [WRN] Nieudana próba edycji pracownika
+2020-04-16 18:02:48.056 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:50.392 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:52.037 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 18:02:59.923 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:09.800 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:12.919 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:19.511 +02:00 [INF] Usunięto stanowisko 1
+2020-04-16 18:03:19.518 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:22.449 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:28.620 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:32.015 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:32.242 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:32.540 +02:00 [WRN] Nieudana próba usunięcia stanowiska
+2020-04-16 18:03:32.988 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:33.708 +02:00 [INF] Nieudana próba wyświetlenia szczegółów stanowiska
+2020-04-16 18:03:34.164 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:34.798 +02:00 [WRN] Nieudana próba edycji stanowiska
+2020-04-16 18:03:35.585 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 18:03:38.774 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:03:42.657 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:03:45.399 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:03:50.644 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:03:52.668 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:40:46.644 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 18:52:47.092 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 18:53:13.762 +02:00 [INF] Wyświetlono działy
+2020-04-16 18:54:17.100 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 18:55:13.603 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 18:56:56.792 +02:00 [INF] Uruchomiono aplikację

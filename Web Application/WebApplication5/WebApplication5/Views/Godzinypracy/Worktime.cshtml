@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApplication5.Models.Podsumowanie>
+
+@{
+    ViewData["Title"] = "Worktime";
+}
+
+<h1>Podsumowanie miesięczne</h1>
+
+
+@using (Html.BeginForm())
+{
+
+    <p>
+        <input name="data" type="month" value="Search"/>
+        <input type="submit" value="Search" />
+    </p>
+
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPracownik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwisko)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CzasPracy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nadgodziny)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wynagrodzenie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WynagrodzenieEuro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdPracownik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Imie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwisko)
+                </td>
+                <td>
+                    @item.CzasPracy.ToString("F")
+                </td>
+                <td>
+                    @item.Nadgodziny.ToString("F")
+                </td>
+                <td>
+                    @item.Wynagrodzenie.ToString("F")
+                </td>
+                <td>
+                    @item.WynagrodzenieEuro.ToString("F")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
