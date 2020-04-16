@@ -167,20 +167,8 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcore
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -288,37 +276,6 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcore
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.csproj.CopyComplete
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.pdb
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Pracownik\Create.cshtml.g.cs
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Pracownik\Delete.cshtml.g.cs
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Pracownik\Details.cshtml.g.cs
@@ -352,8 +309,38 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcore
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Godzinypracy\Index.cshtml.g.cs
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Serilog.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+<<<<<<< HEAD
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Wejscia\Delays.cshtml.g.cs
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Godzinypracy\Worktime.cshtml.g.cs
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.MvcApplicationPartsAssemblyInfo.cache
+=======
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -562,3 +549,4 @@ C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-pr
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.dll
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.pdb
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\WebApplication5.genruntimeconfig.cache
+>>>>>>> 741e27babacfcacb23ceda90c234e9a2065303f8

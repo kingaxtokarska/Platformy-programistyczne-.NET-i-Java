@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication5.Models
 {
@@ -22,6 +20,8 @@ namespace WebApplication5.Models
         public virtual DbSet<Stanowisko> Stanowisko { get; set; }
         public virtual DbSet<Wejscia> Wejscia { get; set; }
         public virtual DbSet<Wyjscia> Wyjscia { get; set; }
+        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -102,9 +102,39 @@ namespace WebApplication5.Models
 
                 entity.HasOne(d => d.IdDzialNavigation)
                     .WithMany()
-                    .HasForeignKey(d => d.IdDzial)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
+                .HasForeignKey(d => d.IdDzial)
                     .HasConstraintName("FK_DzialGodziny");
+            });
+
+            modelBuilder.Entity<Stanowisko>(entity =>
+            {
+                entity.HasKey(e => e.IdStanowisko)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("stanowisko");
+
+                entity.HasIndex(e => e.IdDzial)
+                    .HasName("FK_DzialStanowisko");
+
+                entity.Property(e => e.IdStanowisko).HasColumnName("idStanowisko");
+
+                entity.Property(e => e.IdDzial).HasColumnName("idDzial");
+
+                entity.Property(e => e.NazwaStanowisko)
+                    .IsRequired()
+                    .HasColumnName("nazwaStanowisko")
+                    .HasColumnType("varchar(32)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Wynagrodzenie).HasColumnName("wynagrodzenie");
+
+                entity.HasOne(d => d.IdDzialNavigation)
+                    .WithMany(p => p.Stanowisko)
+                    .HasForeignKey(d => d.IdDzial)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_DzialStanowisko");
             });
 
             modelBuilder.Entity<Pracownik>(entity =>
@@ -156,38 +186,8 @@ namespace WebApplication5.Models
                 entity.HasOne(d => d.IdStanowiskoNavigation)
                     .WithMany(p => p.Pracownik)
                     .HasForeignKey(d => d.IdStanowisko)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_StanowiskoPracownik");
-            });
-
-            modelBuilder.Entity<Stanowisko>(entity =>
-            {
-                entity.HasKey(e => e.IdStanowisko)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("stanowisko");
-
-                entity.HasIndex(e => e.IdDzial)
-                    .HasName("FK_DzialStanowisko");
-
-                entity.Property(e => e.IdStanowisko).HasColumnName("idStanowisko");
-
-                entity.Property(e => e.IdDzial).HasColumnName("idDzial");
-
-                entity.Property(e => e.NazwaStanowisko)
-                    .IsRequired()
-                    .HasColumnName("nazwaStanowisko")
-                    .HasColumnType("varchar(32)")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_0900_ai_ci");
-
-                entity.Property(e => e.Wynagrodzenie).HasColumnName("wynagrodzenie");
-
-                entity.HasOne(d => d.IdDzialNavigation)
-                    .WithMany(p => p.Stanowisko)
-                    .HasForeignKey(d => d.IdDzial)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DzialStanowisko");
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_PracownikStanowisko");
             });
 
             modelBuilder.Entity<Wejscia>(entity =>
@@ -214,12 +214,16 @@ namespace WebApplication5.Models
                     .HasColumnName("godzinaWejscia")
                     .HasColumnType("time");
 
+                entity.Property(e => e.DzienTygodnia)
+                    .HasColumnName("dzienTygodnia")
+                    .HasColumnType("varchar(10)");
+
                 entity.Property(e => e.IdPracownik).HasColumnName("idPracownik");
 
                 entity.HasOne(d => d.IdPracownikNavigation)
                     .WithMany()
                     .HasForeignKey(d => d.IdPracownik)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_PracownikWejscie");
             });
 
@@ -248,18 +252,73 @@ namespace WebApplication5.Models
                     .HasColumnName("godzinaWyjscia")
                     .HasColumnType("time");
 
+                entity.Property(e => e.DzienTygodnia)
+                  .HasColumnName("dzienTygodnia")
+                  .HasColumnType("varchar(10)");
+
                 entity.Property(e => e.IdPracownik).HasColumnName("idPracownik");
 
                 entity.HasOne(d => d.IdPracownikNavigation)
                     .WithMany()
                     .HasForeignKey(d => d.IdPracownik)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_PracownikWyjscie");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            modelBuilder.Entity<Uzytkownik>(entity =>
+
+            {
+
+                entity.HasKey(e => e.IdUzytkownik)
+
+                    .HasName("PRIMARY");
+
+
+
+                entity.ToTable("uzytkownik");
+
+
+
+                entity.Property(e => e.IdUzytkownik).HasColumnName("idUzytkownik");
+
+
+
+                entity.Property(e => e.NazwaUzytkownik)
+
+                    .IsRequired()
+
+                    .HasColumnName("nazwaUzytkownik")
+
+                    .HasColumnType("varchar(32)")
+
+                    .HasCharSet("utf8mb4")
+
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+
+
+                entity.Property(e => e.HasloUzytkownik)
+
+                    .IsRequired()
+
+                    .HasColumnName("hasloUzytkownik")
+
+                    .HasColumnType("varchar(32)")
+
+                    .HasCharSet("utf8mb4")
+
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+            });
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connection = ConfigurationSettings.ConnectionSettings;
+
+            optionsBuilder.UseMySql(connection);
+        }
     }
 }

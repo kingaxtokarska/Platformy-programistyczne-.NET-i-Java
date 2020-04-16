@@ -1,174 +1,121 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using Serilog;
 using WebApplication5.Models;
+using WebApplication5.Repositories;
+using WebApplication5.Services;
 
 namespace WebApplication5.Controllers
 {
     public class DzialController : Controller
     {
-        private readonly firmaContext _context;
+        private readonly DzialService _dzialService;
+        private readonly DzialRepository _dzialRepository;
 
-        public DzialController(firmaContext context)
+        public DzialController(DzialService dzialService, DzialRepository dzialRepository)
         {
-            _context = context;
+            _dzialService = dzialService;
+            _dzialRepository = dzialRepository;
         }
-
-        // GET: Dzial
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewBag.SectionSortParm = sortOrder == "dzial" ? "dzial_desc" : "dzial";
-
-            var dzialy = from d in (_context.Dzial)
-                             select d;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                dzialy = dzialy.Where(s => s.NazwaDzial.Contains(searchString));
-            }
-
-            switch (sortOrder)
-            {
-                case "dzial_desc":
-                    dzialy = dzialy.OrderByDescending(d => d.NazwaDzial);
-                    break;
-                case "dzial":
-                    dzialy = dzialy.OrderBy(d => d.NazwaDzial);
-                    break;
-                default:
-                    dzialy = dzialy.OrderBy(d => d.IdDzial);
-                    break;
-            }
-            return View(await dzialy.ToListAsync());
+            var dzialy = await _dzialService.PobierzDzialy(searchString, sortOrder);
+            return View(dzialy);
         }
-
-        // GET: Dzial/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
+                Log.Information("Nieudana próba wyświetlenia szczegółów działu");
                 return NotFound();
             }
-
-            var dzial = await _context.Dzial
-                .FirstOrDefaultAsync(m => m.IdDzial == id);
+            var dzial = await _dzialRepository.PobierzDzial(id);
             if (dzial == null)
             {
+                Log.Information("Nieudana próba wyświetlenia szczegółów działu");
                 return NotFound();
             }
-
             return View(dzial);
         }
 
-        // GET: Dzial/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Dzial/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdDzial,NazwaDzial")] Dzial dzial)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(dzial);
-                await _context.SaveChangesAsync();
+                await _dzialRepository.DodajDzial(dzial);
                 return RedirectToAction(nameof(Index));
             }
             return View(dzial);
         }
 
-        // GET: Dzial/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
+                Log.Warning("Nieudana próba edycji działu");
                 return NotFound();
             }
-
-            var dzial = await _context.Dzial.FindAsync(id);
+            var dzial = await _dzialRepository.PobierzDzial(id);
             if (dzial == null)
             {
+                Log.Warning("Nieudana próba edycji działu");
                 return NotFound();
             }
             return View(dzial);
         }
 
-        // POST: Dzial/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdDzial,NazwaDzial")] Dzial dzial)
         {
             if (id != dzial.IdDzial)
             {
+                Log.Warning("Nieudana próba edycji działu");
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
-                try
+                var czyZedytowano = await _dzialRepository.EdytujDzial(dzial);
+                if (czyZedytowano == false)
                 {
-                    _context.Update(dzial);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DzialExists(dzial.IdDzial))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    return NotFound();
                 }
                 return RedirectToAction(nameof(Index));
             }
             return View(dzial);
         }
 
-        // GET: Dzial/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
+                Log.Warning("Nieudana próba usunięcia działu");
                 return NotFound();
             }
-
-            var dzial = await _context.Dzial
-                .FirstOrDefaultAsync(m => m.IdDzial == id);
+            var dzial = await _dzialRepository.PobierzDzial(id);
             if (dzial == null)
             {
+                Log.Warning("Nieudana próba usunięcia działu");
                 return NotFound();
             }
-
             return View(dzial);
         }
 
-        // POST: Dzial/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var dzial = await _context.Dzial.FindAsync(id);
-            _context.Dzial.Remove(dzial);
-            await _context.SaveChangesAsync();
+            var dzial = await _dzialService.UsunDzial(id);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DzialExists(int id)
-        {
-            return _context.Dzial.Any(e => e.IdDzial == id);
-        }
     }
 }

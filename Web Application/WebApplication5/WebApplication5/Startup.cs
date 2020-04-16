@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApplication5.Models;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
+using WebApplication5.Services;
+using WebApplication5.Repositories;
 
 namespace WebApplication5
 {
@@ -21,13 +21,25 @@ namespace WebApplication5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<firmaContext>(options => options.UseMySql(Configuration.GetConnectionString("FirmaDatabase")));
+            services.AddSingleton<DzialService>();
+            services.AddSingleton<StanowiskoService>();
+            services.AddSingleton<PracownikService>();
+            services.AddSingleton<GodzinypracyService>();
+            services.AddSingleton<WejsciaService>();
+            services.AddSingleton<WyjsciaService>();
+            services.AddSingleton<DzialRepository>();
+            services.AddSingleton<StanowiskoRepository>();
+            services.AddSingleton<PracownikRepository>();
+            services.AddSingleton<GodzinypracyRepository>();
+            services.AddSingleton<WejsciaRepository>();
+            services.AddSingleton<WyjsciaRepository>();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            ConfigurationSettings.ConnectionSettings = Configuration.GetConnectionString("FirmaDatabase");
             Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Information()
             .WriteTo.Console()
@@ -35,8 +47,7 @@ namespace WebApplication5
             rollingInterval: RollingInterval.Day,
             rollOnFileSizeLimit: true)
             .CreateLogger();
-            Log.Information("Hello, Serilog!");
-            Log.CloseAndFlush();
+            Log.Information("Uruchomiono aplikacjê");
 
             if (env.IsDevelopment())
             {
