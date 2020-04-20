@@ -4,16 +4,18 @@
 
 ## Spis Treści
 * [Opis](#opis)
-* [Co zostało zrobione?](#co-zostało-zrobione?)
+* [Co zostało zrobione](#co-zostało-zrobione)
 * [Screenshots](#screenshots)
 * [Wykorzystane technologie](#wykorzystane-technologie)
 * [Uruchomienie](#uruchomienie)
 * [Funkcje](#funkcje)
 * [Status](#status)
 
-## Opis (informacje o aplikacji)
+## Opis 
 
-## Co zostało zrobione?
+(informacje o aplikacji)
+
+## Co zostało zrobione
 
 Zapewniono komunikację z bazą danych.
 Utworzono modele: Pracownik, Stanowisko, Dział, Godziny pracy, Wejście i Wyjście z odpowiednimi polami.
@@ -30,14 +32,14 @@ Utworzono widoki umożliwiające wykorzystywanie zaimplementowanych funkcjonalno
 * Entity Framework
 * Wielowątkowość/asynchroniczność
 * NuGety:
-**Microsoft.EntityFrameworkCore.SqlServer 3.1.3
-Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1
-MySql.Data.EntityFrameworkCore 8.0.19
-Pomelo.EntityFrameworkCore.MySql 3.1.1
-Pomelo.EntityFrameworkCore.MySql.Design 1.1.2
-Serilog 2.9.0"
-Serilog.Sinks.Console 3.1.1
-Serilog.Sinks.File 4.1.0"
+  * Microsoft.EntityFrameworkCore.SqlServer 3.1.3
+  * Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1
+  * MySql.Data.EntityFrameworkCore 8.0.19
+  * Pomelo.EntityFrameworkCore.MySql 3.1.1
+  * Pomelo.EntityFrameworkCore.MySql.Design 1.1.2
+  * Serilog 2.9.0"
+  * Serilog.Sinks.Console 3.1.1
+  * Serilog.Sinks.File 4.1.0"
 
 ## Uruchomienie
 
