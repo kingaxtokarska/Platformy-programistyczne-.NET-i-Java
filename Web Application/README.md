@@ -71,7 +71,8 @@ Specjalista do spraw zatrudnienia i prezes mają także dostęp do dodatkowych f
 Podsumowanie miesięczne pozwala na podliczenie przepracowanych godzin oraz ewentualnej realizacji nadgodzin przez poszczególnych pracowników, a nawet wyliczenie wysokości wynagrodzenia dla każdego pracownika. Stawka godzinowa przypisana jest do stanowiska. Za pracę w godzinach nadliczbowych przysługuje dodatek w wysokości 50% stawki godzinowej. Wysokość wynagrodzenia przeliczana jest także na walutę euro, dzięki wykorzystaniu publicznego Web API umożliwiającego klientom wykonywanie zapytań na poniższych zbiorach danych publikowanych przez Narodowy Bank Polski.
 
 
-## Wykorzystane technologie
+## Technologie
+* .NET Core 3.1
 * Komunikacja z bazą danych (Entity Framework)
 * LINQ (zadawanie pytań na kolekcjach obiektów o składni podobnej do SQL)
 * Komunikacja z zewnętrznym API (wykorzystanie formatu JSON)
@@ -80,8 +81,9 @@ Podsumowanie miesięczne pozwala na podliczenie przepracowanych godzin oraz ewen
 * Obsługa wielowątkowości (asynchroniczność)
 * Testowanie zamierzonej funkcjonalności (testy jednostkowe)
 * Wykorzystanie zewnętrznych bibliotek:
-  * EntityFramework 6.4.0
+  * Microsoft.AspNet.Identity.Core 2.2.3
   * Microsoft.AspNet.WebApi.Client 5.2.7
+  * Microsoft.AspNet.WebApi.Core 5.2.7
   * Microsoft.EntityFrameworkCore 3.1.3
   * Microsoft.EntityFrameworkCore.Relational 3.1.3
   * Microsoft.EntityFrameworkCore.SqlServer 3.1.3
