@@ -30,7 +30,7 @@ Utworzono widoki umożliwiające wykorzystywanie zaimplementowanych funkcjonalno
 * Entity Framework
 * Wielowątkowość/asynchroniczność
 * NuGety:
-** Microsoft.EntityFrameworkCore.SqlServer 3.1.3
+**Microsoft.EntityFrameworkCore.SqlServer 3.1.3
 Microsoft.VisualStudio.Web.CodeGeneration.Design 3.1.1
 MySql.Data.EntityFrameworkCore 8.0.19
 Pomelo.EntityFrameworkCore.MySql 3.1.1
