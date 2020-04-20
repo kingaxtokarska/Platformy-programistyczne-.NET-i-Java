@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Serilog;
@@ -20,6 +22,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             ViewBag.EmplacementSortParm = sortOrder == "stanowisko" ? "stanowisko_desc" : "stanowisko";
             ViewBag.PaymentSortParm = sortOrder == "wynagrodzenie" ? "wynagrodzenie_desc" : "wynagrodzenie";
             ViewBag.SectionSortParm = sortOrder == "dzial" ? "dzial_desc" : "dzial";
@@ -28,6 +34,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Details(int? id)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             if (id == null)
             {
                 Log.Information("Nieudana próba wyświetlenia szczegółów stanowiska");

@@ -15,7 +15,6 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netco
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\FirmaTesty.pdb
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
@@ -231,11 +230,4 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netco
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.Cookies.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.OAuth.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\Owin.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\NUnitTestProject1\bin\Debug\netcoreapp3.1\System.Web.Http.dll

@@ -196,7 +196,7 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcore
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Uzytkownik\Index.cshtml.g.cs
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Uzytkownik\Prezes.cshtml.g.cs
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Uzytkownik\Pracownik.cshtml.g.cs
-C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Home.cshtml.g.cs
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
+C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.MvcApplicationPartsAssemblyInfo.cache

@@ -4,33 +4,80 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
 
-<div>
-    <h4>Wejscia</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataWejscia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataWejscia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GodzinaWejscia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GodzinaWejscia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdPracownikNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdPracownikNavigation.Imie)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.idWejscie">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+{
+    <h1>Details</h1>
+
+    <div>
+        <h4>Wejscia</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idWejscie)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idWejscie)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DataWejscia)
+            </dt>
+            <dd class="col-sm-10">
+                @Model.DataWejscia.ToString("yyyy-MM-dd")
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GodzinaWejscia)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GodzinaWejscia)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownik)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownik)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.Imie)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.Imie)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.Nazwisko)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.Nazwisko)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.IdStanowisko)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.IdStanowisko)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.NazwaStanowisko)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.NazwaStanowisko)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.IdDzial)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.IdDzial)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.IdDzialNavigation.NazwaDzial)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdPracownikNavigation.IdStanowiskoNavigation.IdDzialNavigation.NazwaDzial)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        @if (ViewData["Rola"].ToString() == "Prezes")
+        {<a asp-action="Edit" asp-route-id="@Model.idWejscie">Edit</a>}
+        <a asp-action="Index">Back to List</a>
+    </div>
+}

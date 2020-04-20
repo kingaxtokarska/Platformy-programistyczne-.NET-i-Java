@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,6 +23,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             ViewBag.NameSortParm = sortOrder == "imie" ? "imie_desc" : "imie";
             ViewBag.SurnameSortParm = sortOrder == "nazwisko" ? "nazwisko_desc" : "nazwisko";
             ViewBag.DateSortParm = sortOrder == "data" ? "data_desc" : "data";
@@ -30,6 +36,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Details(int? id)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             if (id == null)
             {
                 Log.Information("Nieudana próba wyświetlenia szczegółów wejscia");
@@ -79,7 +89,7 @@ namespace WebApplication5.Controllers
                 return NotFound();
             }
             var pracownicy = await _wejsciaRepository.PobierzPracownikow();
-            ViewData["IdPracownik"] = new SelectList(pracownicy, "IdPracownik", "Imie", wejscie.IdPracownik);
+            ViewData["IdPracownik"] = new SelectList(pracownicy, "IdPracownik", "IdPracownik", wejscie.IdPracownik);
             return View(wejscie);
         }
 
@@ -102,7 +112,7 @@ namespace WebApplication5.Controllers
                 return RedirectToAction(nameof(Index));
             }
             var pracownicy = await _wejsciaRepository.PobierzPracownikow();
-            ViewData["IdPracownik"] = new SelectList(pracownicy, "IdPracownik", "Imie", wejscie.IdPracownik);
+            ViewData["IdPracownik"] = new SelectList(pracownicy, "IdPracownik", "IdPracownik", wejscie.IdPracownik);
             return View(wejscie);
         }
 

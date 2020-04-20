@@ -4,39 +4,57 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
+{
+    <h1>Details</h1>
 
-<div>
-    <h4>Godzinypracy</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DzienTygodnia)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DzienTygodnia)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PoczatekPracy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PoczatekPracy)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KoniecPracy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KoniecPracy)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdDzialNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdDzialNavigation.NazwaDzial)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.idGodzinyPracy">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <h4>Godzinypracy</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.idGodzinyPracy)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.idGodzinyPracy)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdDzial)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdDzial)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdDzialNavigation.NazwaDzial)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdDzialNavigation.NazwaDzial)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DzienTygodnia)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DzienTygodnia)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PoczatekPracy)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PoczatekPracy)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.KoniecPracy)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.KoniecPracy)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        @if (ViewData["Rola"].ToString() == "Prezes")
+        {
+            <a asp-action="Edit" asp-route-id="@Model.idGodzinyPracy">Edit</a>
+        }
+        <a asp-action="Index">Back to List</a>
+    </div>
+}

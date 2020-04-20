@@ -4,51 +4,52 @@
     ViewData["Title"] = "Delays";
 }
 
-<h1>Spóźnienia</h1>
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
 
-@using (Html.BeginForm())
 {
-<p>
-    <input name="data" type="date" value="Search" />
-    <input type="submit" value="Search" />
+    <h1>Spóźnienia</h1>
 
-</p>
-}
-<table class="table">
-    <thead>
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input name="data" type="date" value="Search" />
+            <input type="submit" value="Search" />
+
+        </p>
+    }
+    <table class="table">
         <tr>
             <th>
-                @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.Imie)
             </th>
             <th>
-                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+                @Html.DisplayNameFor(model => model.IdPracownikNavigation.Nazwisko)
             </th>
             <th>
-                @Html.ActionLink("Data wejscia", "Index", new { sortOrder = ViewBag.DateSortParm })
+                @Html.DisplayNameFor(model => model.DataWejscia)
             </th>
             <th>
-                @Html.ActionLink("Godzina wejscia", "Index", new { sortOrder = ViewBag.TimeSortParm })
+                @Html.DisplayNameFor(model => model.GodzinaWejscia)
             </th>
-            <th></th>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Imie)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Nazwisko)
-                </td>
-                <td>
-                    @item.DataWejscia.ToString("yyyy-MM-dd")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.GodzinaWejscia)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Nazwisko)
+                    </td>
+                    <td>
+                        @item.DataWejscia.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GodzinaWejscia)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

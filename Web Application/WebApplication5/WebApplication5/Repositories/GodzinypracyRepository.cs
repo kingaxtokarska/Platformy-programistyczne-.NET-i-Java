@@ -64,7 +64,7 @@ namespace WebApplication5.Repositories
         {
             using (var db = new firmaContext())
             {
-                var godzinypracy = await db.Godzinypracy
+                var godzinypracy = await db.Godzinypracy.Include(g => g.IdDzialNavigation)
                  .FirstOrDefaultAsync(m => m.idGodzinyPracy == id);
                 return godzinypracy;
             }

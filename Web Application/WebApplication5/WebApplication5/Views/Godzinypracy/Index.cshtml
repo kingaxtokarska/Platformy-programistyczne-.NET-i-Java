@@ -4,58 +4,68 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Godziny pracy</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-@using (Html.BeginForm())
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
 {
+    <h1>Godziny pracy</h1>
+
     <p>
-        Find: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
-    </p>
-}
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.ActionLink("Dzień tygodnia", "Index", new { sortOrder = ViewBag.DaynameSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Początek pracy", "Index", new { sortOrder = ViewBag.StarttimeSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Koniec pracy", "Index", new { sortOrder = ViewBag.StoptimeSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Dział", "Index", new { sortOrder = ViewBag.SectionSortParm })
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+        @if (ViewData["Rola"].ToString() == "Prezes")
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DzienTygodnia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PoczatekPracy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KoniecPracy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdDzialNavigation.NazwaDzial)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.idGodzinyPracy">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.idGodzinyPracy">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.idGodzinyPracy">Delete</a>
-                </td>
-            </tr>
+            <a asp-action="Create">Create New</a>
         }
-    </tbody>
-</table>
+    </p>
+    @using (Html.BeginForm())
+    {
+        <p>
+            Find: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Dzień tygodnia", "Index", new { sortOrder = ViewBag.DaynameSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Początek pracy", "Index", new { sortOrder = ViewBag.StarttimeSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Koniec pracy", "Index", new { sortOrder = ViewBag.StoptimeSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Dział", "Index", new { sortOrder = ViewBag.SectionSortParm })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DzienTygodnia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PoczatekPracy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KoniecPracy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdDzialNavigation.NazwaDzial)
+                    </td>
+                    <td>
+                        @if (ViewData["Rola"].ToString() == "Prezes")
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.idGodzinyPracy">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.idGodzinyPracy">Delete</a>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.idGodzinyPracy">Details</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

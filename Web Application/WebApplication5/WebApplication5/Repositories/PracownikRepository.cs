@@ -86,7 +86,7 @@ namespace WebApplication5.Repositories
         {
             using (var db = new firmaContext())
             {
-                var pracownik = await db.Pracownik
+                var pracownik = await db.Pracownik.Include(p => p.IdStanowiskoNavigation).ThenInclude(p => p.IdDzialNavigation)
                  .FirstOrDefaultAsync(m => m.IdPracownik == id);
                 return pracownik;
             }
@@ -96,7 +96,7 @@ namespace WebApplication5.Repositories
             using (var db = new firmaContext())
             {
                 db.Add(pracownik);
-                pracownik.DataZatrudnienia = DateTime.Now;
+                pracownik.DataZatrudnienia = DateTime.Now.Date;
                 await db.SaveChangesAsync();
                 Log.Information("Utworzono nowego pracownika");
             }

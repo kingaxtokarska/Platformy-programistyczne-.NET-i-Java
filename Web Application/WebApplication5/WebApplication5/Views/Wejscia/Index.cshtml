@@ -4,55 +4,63 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Wejścia</h1>
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
 
-@using (Html.BeginForm())
 {
-    <p>
-        Find: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
-    </p>
+    <h1>Wejścia</h1>
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            Find: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Data wejscia", "Index", new { sortOrder = ViewBag.DateSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Godzina wejscia", "Index", new { sortOrder = ViewBag.TimeSortParm })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Nazwisko)
+                    </td>
+                    <td>
+                        @item.DataWejscia.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GodzinaWejscia)
+                    </td>
+                    <td>
+                        @if (ViewData["Rola"].ToString() == "Prezes")
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.IdPracownik">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.IdPracownik">Delete</a>
+                        }
+                        <a asp-action="Details" asp-route-id="@item.IdPracownik">Details</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Data wejscia", "Index", new { sortOrder = ViewBag.DateSortParm })
-            </th>
-            <th>
-                @Html.ActionLink("Godzina wejscia", "Index", new { sortOrder = ViewBag.TimeSortParm })
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdPracownikNavigation.Nazwisko)
-            </td>
-            <td>
-                @item.DataWejscia.ToString("yyyy-MM-dd")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GodzinaWejscia)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdPracownik">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdPracownik">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdPracownik">Delete</a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
