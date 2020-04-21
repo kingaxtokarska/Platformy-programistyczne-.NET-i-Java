@@ -208,3 +208,25 @@
 2020-04-16 18:55:13.603 +02:00 [INF] Uruchomiono aplikację
 2020-04-16 18:56:56.792 +02:00 [INF] Uruchomiono aplikację
 >>>>>>> 6e8272f0c2409cd4602439dd1fdd90451bc13413
+2020-04-16 22:06:37.326 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 22:11:53.757 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 22:12:25.981 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 22:12:28.532 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:13:43.458 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 22:17:04.541 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 22:17:19.769 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:17:30.817 +02:00 [INF] Wyświetlono działy
+2020-04-16 22:17:33.168 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 22:17:35.911 +02:00 [INF] Wyświetlono stanowiska
+2020-04-16 22:17:52.575 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:17:58.844 +02:00 [INF] Wyświetlono godziny pracy
+2020-04-16 22:18:02.206 +02:00 [INF] Kontrola spóźnień
+2020-04-16 22:18:04.443 +02:00 [INF] Wyświetlono wyjścia
+2020-04-16 22:18:06.326 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:25:07.312 +02:00 [INF] Uruchomiono aplikację
+2020-04-16 22:27:03.638 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:27:23.462 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:27:29.077 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:27:32.676 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:27:59.149 +02:00 [INF] Wyświetlono pracowników
+2020-04-16 22:28:18.730 +02:00 [INF] Wyświetlono pracowników

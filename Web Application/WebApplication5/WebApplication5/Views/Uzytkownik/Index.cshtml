@@ -1,25 +1,9 @@
 ﻿@model WebApplication5.Models.Uzytkownik
 
-<<<<<<< HEAD
 @{
 
     ViewData["Title"] = "Index";
 
-}
-
-
-<html>
-
-<head>
-
-    <title>Login</title>
-
-    <style>
-
-=======
-
-@{
-    ViewData["Title"] = "Index";
 }
 @{
     Layout = null;
@@ -27,9 +11,9 @@
 
 <html>
 <head>
+
     <title>Login</title>
     <style>
->>>>>>> 741e27babacfcacb23ceda90c234e9a2065303f8
         #login-div {
             position: absolute;
             left: 40%;
@@ -37,154 +21,50 @@
             border: 1px solid #ccc;
             padding: 10px 10px;
         }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 741e27babacfcacb23ceda90c234e9a2065303f8
         .field-validation-error {
             color: red;
         }
     </style>
 
-<<<<<<< HEAD
-
-
-</head>
-
-<body>
-
-    <div id="login-div">
-
-        @using (Html.BeginForm("Autherize", "Uzytkownik", FormMethod.Post))
-
-        {
-
-            <table>
-
-                <tr>
-
-                    <td>@Html.LabelFor(model => model.NazwaUzytkownik)</td>
-
-                    <td>@Html.EditorFor(model => model.NazwaUzytkownik)</td>
-
-                </tr>
-
-                <tr>
-
-                    <td></td>
-
-                    <td>@Html.ValidationMessageFor(model => model.NazwaUzytkownik)</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>@Html.LabelFor(model => model.HasloUzytkownik)</td>
-
-                    <td>@Html.EditorFor(model => model.HasloUzytkownik)</td>
-
-                </tr>
-
-                <tr>
-
-                    <td></td>
-
-                    <td>@Html.ValidationMessageFor(model => model.HasloUzytkownik)</td>
-
-                </tr>
-
-                <tr>
-
-                    <td colspan="2">
-
-                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
-
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td></td>
-
-                    <td>
-
-                        <input type="submit" name="name" value="Zaloguj" />
-
-                        <input type="reset" name="name" value="Wyczyść" />
-
-                    </td>
-
-                </tr>
-
-
-
-            </table>
-
-        }
-
-
-
-    </div>
-
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-
-    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
-
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
-
-</body>
-
-</html>
-=======
 </head>
 <body>
     <div id="login-div">
         @using (Html.BeginForm("Autherize", "Uzytkownik", FormMethod.Post))
         {
-            <table>
-                <tr>
-                    <td> </td>
-                    <td style="text-decoration:underline">NASZA APLIKACJA</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(model => model.NazwaUzytkownik)</td>
-                    <td>@Html.EditorFor(model => model.NazwaUzytkownik)</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.NazwaUzytkownik)</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(model => model.HasloUzytkownik)</td>
-                    <td>@Html.EditorFor(model => model.HasloUzytkownik)</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.HasloUzytkownik)</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" name="name" value="Zaloguj" />
-                        <input type="reset" name="name" value="Wyczyść" />
-                    </td>
-                </tr>
-
-            </table>
+        <table>
+            <tr>
+                <td>@Html.LabelFor(model => model.NazwaUzytkownik)</td>
+                <td>@Html.EditorFor(model => model.NazwaUzytkownik)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.NazwaUzytkownik)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.HasloUzytkownik)</td>
+                <td>@Html.EditorFor(model => model.HasloUzytkownik)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.HasloUzytkownik)</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Zaloguj" />
+                    <input type="reset" name="name" value="Wyczyść" />
+                </td>
+            </tr>
+        </table>
         }
-
     </div>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>
->>>>>>> 741e27babacfcacb23ceda90c234e9a2065303f8

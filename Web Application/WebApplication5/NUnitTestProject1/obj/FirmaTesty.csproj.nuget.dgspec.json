@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj": {}
+    "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj": {
+    "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj",
+        "projectUniqueName": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj",
         "projectName": "FirmaTesty",
-        "projectPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj",
-        "packagesPath": "C:\\Users\\kinga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\NUnitTestProject1\\obj\\",
+        "projectPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\NUnitTestProject1\\FirmaTesty.csproj",
+        "packagesPath": "C:\\Users\\pszcz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\NUnitTestProject1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pszcz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -31,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj": {
-                "projectPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj"
+              "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj": {
+                "projectPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj"
               }
             }
           }
@@ -97,24 +98,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj": {
+    "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
+        "projectUniqueName": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
         "projectName": "FirmaAplikacja",
-        "projectPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
-        "packagesPath": "C:\\Users\\kinga\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\obj\\",
+        "projectPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
+        "packagesPath": "C:\\Users\\pszcz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pszcz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -212,7 +214,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

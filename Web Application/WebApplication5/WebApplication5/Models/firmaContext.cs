@@ -20,7 +20,7 @@ namespace WebApplication5.Models
         public virtual DbSet<Stanowisko> Stanowisko { get; set; }
         public virtual DbSet<Wejscia> Wejscia { get; set; }
         public virtual DbSet<Wyjscia> Wyjscia { get; set; }
-        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
+        ///public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
 
 
 
