@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "GBDZdkOZYexHuEoJ9qdUbXDHR+5zTcg7KYVNfRjiRCzxmjfG+qMwYHbVEL8b0h6ccccJeuS5qu4XoHyw9UbrmQ==",
+  "dgSpecHash": "NdglvU8BB1tX70rzOLOI9PfBkctLSU/3n2IIgcfJImrIIsTZe8Dg9IE6IYqYm4egZs2gieU9gvp0OI+ThFlgjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pszcz\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\entityframework\\6.4.0\\entityframework.6.4.0.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\google.protobuf\\3.6.1\\google.protobuf.3.6.1.nupkg.sha512",
+    "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.7\\microsoft.aspnet.webapi.core.5.2.7.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -186,5 +188,26 @@
     "C:\\Users\\pszcz\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
     "C:\\Users\\pszcz\\.nuget\\packages\\system.xml.xpath.xmldocument\\4.0.1\\system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Microsoft.AspNet.Identity.Core 2.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „.NETCoreApp,Version=v3.1”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Microsoft.AspNet.WebApi.Core 5.2.7” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „.NETCoreApp,Version=v3.1”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

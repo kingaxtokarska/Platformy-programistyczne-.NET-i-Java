@@ -19,14 +19,8 @@ namespace WebApplication5.Models
         public virtual DbSet<Stanowisko> Stanowisko { get; set; }
         public virtual DbSet<Wejscia> Wejscia { get; set; }
         public virtual DbSet<Wyjscia> Wyjscia { get; set; }
-<<<<<<< HEAD
-        ///public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
-
-=======
         public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
         public virtual DbSet<Rola> Rola { get; set; }
->>>>>>> adb636e43b8618eb9d95b447a05a85a3f685e445
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

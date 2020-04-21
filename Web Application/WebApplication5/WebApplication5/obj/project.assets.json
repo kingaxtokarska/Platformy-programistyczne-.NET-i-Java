@@ -4529,7 +4529,7 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
@@ -4574,7 +4574,7 @@
       ]
     },
     "NuGet.Frameworks/4.7.0": {
-      "sha512": "qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
+      "sha512": "KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "type": "package",
       "path": "nuget.frameworks/4.7.0",
       "files": [
@@ -5069,7 +5069,7 @@
       ]
     },
     "System.Buffers/4.3.0": {
-      "sha512": "ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
+      "sha512": "Pcv2b27ffpu09pjN3PgbnQWYEdhOBcesYYsmQO/tZC8Imw74TJJ8X1j+/+Q7uWprz0/sQiUpuCmYsY1w5GSMvg==",
       "type": "package",
       "path": "system.buffers/4.3.0",
       "files": [
@@ -6702,7 +6702,7 @@
       ]
     },
     "System.Net.Http/4.3.0": {
-      "sha512": "sYg+FtILtRQuYWSIAuNOELwVuVsxVyJGWQyOnlAzhV4xvhyFnON1bAzYYC+jjRW8JREM45R0R5Dgi8MTC5sEwA==",
+      "sha512": "6BBc6BUa7pWFL7KUI/c8wb18IobTZHTtcQKksxJI5F9DRDShdtOvBEJzg5jJbFdTll7gRE+5yXUlq72ciLE+QQ==",
       "type": "package",
       "path": "system.net.http/4.3.0",
       "files": [
@@ -7283,7 +7283,7 @@
       ]
     },
     "System.Reflection.Metadata/1.6.0": {
-      "sha512": "COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
+      "sha512": "I4aWCii7N1bmn43vviRfJQYW6UAco1G/CcjJouvgGdb/sr2BRTSnddhaPMg2oxu9VHFn8T1z3dTLq0pna8zmtA==",
       "type": "package",
       "path": "system.reflection.metadata/1.6.0",
       "files": [
@@ -8695,7 +8695,7 @@
       ]
     },
     "System.Text.Encodings.Web/4.5.0": {
-      "sha512": "Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
+      "sha512": "JF+wDdfFiRl3rz3dPMfR6aR568AW2J5CUMmhSflgHDz4zbVK4/00ax8UHnHyEMvblPewgNugjuA4oyoL8Pex2g==",
       "type": "package",
       "path": "system.text.encodings.web/4.5.0",
       "files": [
@@ -9464,31 +9464,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kinga\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\pszcz\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
       "projectName": "FirmaAplikacja",
       "projectPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
       "packagesPath": "C:\\Users\\pszcz\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\pszcz\\Desktop\\materiały pwr\\6 SEMESTR\\PP.NiJ\\MOJE I KINGI\\Platformy-programistyczne-.NET-i-Java\\Web Application\\WebApplication5\\WebApplication5\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
-      "projectName": "FirmaAplikacja",
-      "projectPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\FirmaAplikacja.csproj",
-      "packagesPath": "C:\\Users\\kinga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kinga\\OneDrive\\Pulpit\\WebApplication5\\WebApplication5\\obj\\",
->>>>>>> adb636e43b8618eb9d95b447a05a85a3f685e445
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kinga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pszcz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -9594,7 +9588,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   },
