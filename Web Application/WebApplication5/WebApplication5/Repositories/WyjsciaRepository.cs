@@ -64,7 +64,7 @@ namespace WebApplication5.Repositories
         {
             using (var db = new firmaContext())
             {
-                var wyjscie = await db.Wyjscia
+                var wyjscie = await db.Wyjscia.Include(we => we.IdPracownikNavigation).ThenInclude(we => we.IdStanowiskoNavigation).ThenInclude(we => we.IdDzialNavigation)
                  .FirstOrDefaultAsync(m => m.idWyjscie == id);
                 return wyjscie;
             }

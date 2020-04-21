@@ -6,6 +6,10 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using WebApplication5.Services;
 using WebApplication5.Repositories;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace WebApplication5
 {
@@ -34,8 +38,43 @@ namespace WebApplication5
             services.AddSingleton<WejsciaRepository>();
             services.AddSingleton<WyjsciaRepository>();
             services.AddMvc();
-        }
+            services.AddHttpContextAccessor();
+            services.AddAuthentication(
+                   CookieAuthenticationDefaults.AuthenticationScheme
+               )
+               .AddCookie(
+                   CookieAuthenticationDefaults.AuthenticationScheme,
+                   options =>
+                   {
+                       options.Events.OnRedirectToAccessDenied = context =>
+                       {
+                           context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                           return Task.CompletedTask;
+                       };
 
+                       options.Events.OnRedirectToLogin = context =>
+                       {
+                           context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                           return Task.CompletedTask;
+                       };
+
+                       options.LoginPath = "/login";
+                       options.LogoutPath = "/logout";
+                       options.SlidingExpiration = true;
+                       options.ExpireTimeSpan = TimeSpan.FromSeconds(60);
+
+
+                   }
+               );
+
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("DefaultPolicy", b =>
+                {
+                    b.RequireAuthenticatedUser();
+                });
+            });
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -64,6 +103,7 @@ namespace WebApplication5
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

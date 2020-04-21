@@ -4,28 +4,31 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes")
+{
+    <h1>Edit</h1>
 
-<h4>Dzial</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdDzial" />
-            <div class="form-group">
-                <label asp-for="NazwaDzial" class="control-label"></label>
-                <input asp-for="NazwaDzial" class="form-control" />
-                <span asp-validation-for="NazwaDzial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <h4>Dzial</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdDzial" />
+                <div class="form-group">
+                    <label asp-for="NazwaDzial" class="control-label"></label>
+                    <input asp-for="NazwaDzial" class="form-control" />
+                    <span asp-validation-for="NazwaDzial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 
+}

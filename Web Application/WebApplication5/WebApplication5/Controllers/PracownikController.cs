@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Serilog;
@@ -20,6 +22,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             ViewBag.NameSortParm = sortOrder == "imie" ? "imie_desc" : "imie";
             ViewBag.SurnameSortParm = sortOrder == "nazwisko" ? "nazwisko_desc" : "nazwisko";
             ViewBag.PeselSortParm = sortOrder == "pesel" ? "pesel_desc" : "pesel";

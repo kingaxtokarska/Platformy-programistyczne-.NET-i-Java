@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,6 +23,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             ViewBag.DaynameSortParm = sortOrder == "dzientygodnia" ? "dzientygodnia_desc" : "dzientygodnia";
             ViewBag.StarttimeSortParm = sortOrder == "poczatekpracy" ? "poczatekpracy_desc" : "poczatekpracy";
             ViewBag.StoptimeSortParm = sortOrder == "koniecpracy" ? "koniecpracy_desc" : "koniecpracy";
@@ -30,6 +36,10 @@ namespace WebApplication5.Controllers
         }
         public async Task<IActionResult> Details(int? id)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             if (id == null)
             {
                 Log.Information("Nieudana próba wyświetlenia szczegółów godzin pracy");

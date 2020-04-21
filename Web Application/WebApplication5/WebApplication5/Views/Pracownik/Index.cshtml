@@ -4,67 +4,75 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Pracownicy</h1>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-@using (Html.BeginForm())
+@if (User.Identity.IsAuthenticated && User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Prezes" || User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Specjalista")
 {
+
+    <h1>Pracownicy</h1>
     <p>
-        Find: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        <a asp-action="Create">Create New</a>
     </p>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Pesel", "Index", new { sortOrder = ViewBag.PeselSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Data zatrudnienia", "Index", new { sortOrder = ViewBag.DateSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Stanowisko", "Index", new { sortOrder = ViewBag.EmplacementSortParm })
-        </th>
-        <th>
-            @Html.ActionLink("Dzial", "Index", new { sortOrder = ViewBag.SectionSortParm })
-        </th>
-        <th></th>
-    </tr>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    @using (Html.BeginForm())
+    {
+        <p>
+            Find: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Imie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nazwisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pesel)
-            </td>
-            <td>
-                @item.DataZatrudnienia.ToString("yyyy-MM-dd")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdStanowiskoNavigation.NazwaStanowisko)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdStanowiskoNavigation.IdDzialNavigation.NazwaDzial)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdPracownik">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdPracownik">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdPracownik">Delete</a>
-            </td>
+            <th>
+                @Html.ActionLink("Imie", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Nazwisko", "Index", new { sortOrder = ViewBag.SurnameSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Pesel", "Index", new { sortOrder = ViewBag.PeselSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Data zatrudnienia", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Stanowisko", "Index", new { sortOrder = ViewBag.EmplacementSortParm })
+            </th>
+            <th>
+                @Html.ActionLink("Dzial", "Index", new { sortOrder = ViewBag.SectionSortParm })
+            </th>
+            <th></th>
         </tr>
-        }
-    </tbody>
-</table>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwisko)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pesel)
+                    </td>
+                    <td>
+                        @item.DataZatrudnienia.ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdStanowiskoNavigation.NazwaStanowisko)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdStanowiskoNavigation.IdDzialNavigation.NazwaDzial)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdPracownik">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.IdPracownik">Details</a>
+                        @if (ViewData["Rola"].ToString() == "Prezes")
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.IdPracownik">Delete</a>
+
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

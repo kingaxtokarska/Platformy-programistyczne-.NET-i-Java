@@ -14,14 +14,18 @@ namespace WebApplication5.Models
         }
 
         public virtual DbSet<Dzial> Dzial { get; set; }
-        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
         public virtual DbSet<Godzinypracy> Godzinypracy { get; set; }
         public virtual DbSet<Pracownik> Pracownik { get; set; }
         public virtual DbSet<Stanowisko> Stanowisko { get; set; }
         public virtual DbSet<Wejscia> Wejscia { get; set; }
         public virtual DbSet<Wyjscia> Wyjscia { get; set; }
+<<<<<<< HEAD
         ///public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
 
+=======
+        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
+        public virtual DbSet<Rola> Rola { get; set; }
+>>>>>>> adb636e43b8618eb9d95b447a05a85a3f685e445
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,30 +42,6 @@ namespace WebApplication5.Models
                 entity.Property(e => e.NazwaDzial)
                     .IsRequired()
                     .HasColumnName("nazwaDzial")
-                    .HasColumnType("varchar(32)")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_0900_ai_ci");
-            });
-
-            modelBuilder.Entity<Uzytkownik>(entity =>
-            {
-                entity.HasKey(e => e.IdUzytkownik)
-                    .HasName("PRIMARY");
-
-                entity.ToTable("uzytkownik");
-
-                entity.Property(e => e.IdUzytkownik).HasColumnName("idUzytkownik");
-
-                entity.Property(e => e.NazwaUzytkownik)
-                    .IsRequired()
-                    .HasColumnName("nazwaUzytkownik")
-                    .HasColumnType("varchar(32)")
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_0900_ai_ci");
-
-                entity.Property(e => e.HasloUzytkownik)
-                    .IsRequired()
-                    .HasColumnName("hasloUzytkownik")
                     .HasColumnType("varchar(32)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
@@ -190,6 +170,23 @@ namespace WebApplication5.Models
                     .HasConstraintName("FK_PracownikStanowisko");
             });
 
+            modelBuilder.Entity<Rola>(entity =>
+            {
+                entity.HasKey(e => e.IdRola)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("rola");
+
+                entity.Property(e => e.IdRola).HasColumnName("idRola");
+
+                entity.Property(e => e.NazwaRola)
+                    .IsRequired()
+                    .HasColumnName("nazwaRola")
+                    .HasColumnType("varchar(32)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
             modelBuilder.Entity<Wejscia>(entity =>
             {
                 entity.HasKey(e => e.idWejscie)
@@ -266,51 +263,39 @@ namespace WebApplication5.Models
             });
 
             modelBuilder.Entity<Uzytkownik>(entity =>
-
             {
-
                 entity.HasKey(e => e.IdUzytkownik)
-
                     .HasName("PRIMARY");
-
-
 
                 entity.ToTable("uzytkownik");
 
-
+                entity.HasIndex(e => e.IdUzytkownik)
+                    .HasName("FK_UzytkownikRola");
 
                 entity.Property(e => e.IdUzytkownik).HasColumnName("idUzytkownik");
 
+                entity.Property(e => e.IdRola).HasColumnName("idRola");
 
-
-                entity.Property(e => e.NazwaUzytkownik)
-
+                entity.Property(e => e.Login)
                     .IsRequired()
-
-                    .HasColumnName("nazwaUzytkownik")
-
+                    .HasColumnName("login")
                     .HasColumnType("varchar(32)")
-
                     .HasCharSet("utf8mb4")
-
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-
-
-                entity.Property(e => e.HasloUzytkownik)
-
+                entity.Property(e => e.Haslo)
                     .IsRequired()
-
-                    .HasColumnName("hasloUzytkownik")
-
+                    .HasColumnName("haslo")
                     .HasColumnType("varchar(32)")
-
                     .HasCharSet("utf8mb4")
-
                     .HasCollation("utf8mb4_0900_ai_ci");
 
+                entity.HasOne(d => d.IdRolaNavigation)
+                    .WithMany(p => p.Uzytkownik)
+                    .HasForeignKey(d => d.IdRola)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .HasConstraintName("FK_UzytkownikRola");
             });
-
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using WebApplication5.Models;
@@ -17,14 +19,23 @@ namespace WebApplication5.Controllers
             _dzialService = dzialService;
             _dzialRepository = dzialRepository;
         }
+
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             ViewBag.SectionSortParm = sortOrder == "dzial" ? "dzial_desc" : "dzial";
             var dzialy = await _dzialService.PobierzDzialy(searchString, sortOrder);
             return View(dzialy);
         }
         public async Task<IActionResult> Details(int? id)
         {
+            var identity = HttpContext.User;
+            var name = identity.Claims.Where(c => c.Type == "Role")
+                               .Select(c => c.Value).SingleOrDefault();
+            ViewData["Rola"] = name;
             if (id == null)
             {
                 Log.Information("Nieudana próba wyświetlenia szczegółów działu");

@@ -1,0 +1,38 @@
+﻿@model WebApplication5.Models.Uzytkownik
+@{
+
+    ViewData["Title"] = "Index";
+
+}
+@if (User.Identity.IsAuthenticated)
+{
+
+<html>
+<body>
+
+    <div class="text-center">
+        <div>
+            @if (ViewData["Rola"].ToString() == "Pracownik")
+            {
+                @Html.ActionLink("Wejscie", "Create", "Wejscia")<br />
+                @Html.ActionLink("Wyjscie", "Create", "Wyjscia")
+            }
+            @if (ViewData["Rola"].ToString() == "Prezes" || ViewData["Rola"].ToString() == "Specjalista")
+            {
+                @Html.ActionLink("Pracownicy", "Index", "Pracownik")<br />
+                @Html.ActionLink("Stanowiska", "Index", "Stanowisko")<br />
+                @Html.ActionLink("Dzialy", "Index", "Dzial")<br />
+                @Html.ActionLink("Godziny pracy", "Index", "Godzinypracy")<br />
+                @Html.ActionLink("Wejscia", "Index", "Wejscia")<br />
+                @Html.ActionLink("Wyjscia", "Index", "Wyjscia")<br />
+                @Html.ActionLink("Spoznienia", "Delays", "Wejscia")<br />
+                @Html.ActionLink("Podsumowanie", "Worktime", "Godzinypracy")
+
+            }
+
+        </div>
+    </div>
+
+</body>
+</html>
+}
