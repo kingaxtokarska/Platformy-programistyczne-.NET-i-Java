@@ -200,7 +200,6 @@ C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcore
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\kinga\OneDrive\Pulpit\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.csprojAssemblyReference.cache
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.csproj.CoreCompileInputs.cache
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.RazorAssemblyInfo.cache
@@ -399,3 +398,4 @@ C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-pr
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\Microsoft.AspNet.Identity.Core.dll
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\pszcz\Desktop\materiały pwr\6 SEMESTR\PP.NiJ\MOJE I KINGI\Platformy-programistyczne-.NET-i-Java\Web Application\WebApplication5\WebApplication5\obj\Debug\netcoreapp3.1\FirmaAplikacja.csprojAssemblyReference.cache
