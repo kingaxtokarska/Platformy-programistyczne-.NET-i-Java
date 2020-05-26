@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tlo3"
+    android:orientation="vertical"
+    tools:context=".MenuActivity">
+
+        <include
+            android:id="@+id/app_bar"
+            layout="@layout/app_bar">
+
+        </include>
+
+
+        <TextView
+            android:id="@+id/menu_meal"
+            android:textColor="@color/White"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="italic"
+            android:textSize="40sp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+        <GridView
+            android:id="@+id/menu_names"
+            android:textColor="@color/White"
+            android:columnWidth="100dp"
+            android:horizontalSpacing="50dp"
+            android:verticalSpacing="20dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp" />
+
+</LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

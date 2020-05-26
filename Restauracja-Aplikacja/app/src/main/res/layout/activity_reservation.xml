@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/tlo3"
+    tools:context=".ReservationActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+
+    </include>
+
+    <LinearLayout
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/res_guests"
+        android:entries="@array/NumberOfGuests"
+        android:background="@drawable/custom_gradient"
+        android:layout_weight="1"
+        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/res_calendar"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_gradient"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    <Spinner
+        android:id="@+id/res_time"
+        android:entries="@array/Time"
+        android:background="@drawable/custom_gradient"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="0.8"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/res_information"
+        android:textColorHint="@color/Silver"
+        android:textColor="@color/White"
+        android:background="@drawable/custom_border"
+        android:layout_weight="1"
+        android:gravity="start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textLongMessage"
+        android:hint="@string/res_information" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/res_name"
+        android:layout_weight="1"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/custom_border"
+        android:textColorHint="@color/Silver"
+        android:textColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textPersonName"
+        android:hint="@string/res_name" />
+
+    <EditText
+        android:id="@+id/res_surname"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/custom_border"
+        android:textColorHint="@color/Silver"
+        android:textColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textPersonName"
+        android:hint="@string/res_surname" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/res_prefix"
+        android:layout_weight="1"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/custom_border"
+        android:textColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="number"
+        android:text="@string/res_prefix" />
+
+    <EditText
+        android:id="@+id/res_phone"
+        android:layout_weight="0.2"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/custom_border"
+        android:textColorHint="@color/Silver"
+        android:textColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="phone"
+        android:hint="@string/res_phone" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/res_mail"
+        android:layout_weight="1"
+        android:background="@drawable/custom_border"
+        android:textColorHint="@color/Silver"
+        android:textColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="textEmailAddress"
+        android:hint="@string/res_mail" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/res_enter"
+        android:layout_weight="1"
+        android:textColor="@color/White"
+        android:background="@drawable/custom_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/res_enter" />
+
+        </TableRow>
+
+
+    </LinearLayout>
+
+</LinearLayout>

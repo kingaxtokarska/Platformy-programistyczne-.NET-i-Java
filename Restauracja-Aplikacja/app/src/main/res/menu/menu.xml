@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+    android:id="@+id/home"
+    android:title="@string/home"
+    app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/menu"
+        android:title="@string/menu"
+        app:showAsAction="never">
+
+        <menu>
+            <item
+                android:id="@+id/menu_starters"
+                android:title="@string/menu_starters">
+            </item>
+
+            <item
+                android:id="@+id/menu_soups"
+                android:title="@string/menu_soups">
+            </item>
+
+            <item
+                android:id="@+id/menu_salads"
+                android:title="@string/menu_salads">
+            </item>
+
+            <item
+                android:id="@+id/menu_pasta"
+                android:title="@string/menu_pasta">
+            </item>
+
+            <item
+                android:id="@+id/menu_meats"
+                android:title="@string/menu_meats">
+            </item>
+
+            <item
+                android:id="@+id/menu_fishes"
+                android:title="@string/menu_fishes">
+            </item>
+
+            <item
+                android:id="@+id/menu_desserts"
+                android:title="@string/menu_desserts">
+            </item>
+
+            <item
+                android:id="@+id/menu_pizza"
+                android:title="@string/menu_pizza">
+            </item>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/reservation"
+        android:title="@string/reservation"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/delivery"
+        android:title="@string/delivery"
+        app:showAsAction="never">
+    </item>
+</menu>

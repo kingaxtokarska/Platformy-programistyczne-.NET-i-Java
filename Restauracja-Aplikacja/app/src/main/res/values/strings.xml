@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Restauracja</string>
+    <string name="home">Strona główna</string>
+    <string name="menu">Menu</string>
+    <string name="reservation">Rezerwacja</string>
+    <string name="delivery">Dostawa</string>
+    <string name="menu_starters">Przystawki</string>
+    <string name="menu_soups">Zupy</string>
+    <string name="menu_salads">Sałatki</string>
+    <string name="menu_pasta">Makarony</string>
+    <string name="menu_meats">Mięsa</string>
+    <string name="menu_fishes">Ryby i owoce morza</string>
+    <string name="menu_desserts">Desery</string>
+    <string name="menu_pizza">Pizza</string>
+    <string name="name_restaurant">Restauracja\nKornik</string>
+    <string name="res_information">Dodatkowe informacje</string>
+    <string name="res_name">Imię</string>
+    <string name="res_surname">Nazwisko</string>
+    <string name="res_prefix">+48</string>
+    <string name="res_phone">Numer tel.</string>
+    <string name="res_mail">Mail</string>
+    <string name="res_calendar">ELO</string>
+    <string name="res_enter">Zareserwuj stolik</string>
+    <string name="del_num">Ilość</string>
+    <string name="del_order"><u>Zamówienie:</u></string>
+    <string name="del_contact"><u>Dane kontaktowe:</u></string>
+    <string name="del_adress">Ulica</string>
+    <string name="del_number">Nr domu</string>
+    <string name="del_code">Kod pocztowy</string>
+    <string name="del_city">Miasto</string>
+    <string name="del_adres_title"><u>Adres:</u></string>
+    <string name="del_inf"><u>Uwagi:</u></string>
+    <string name="del_payment"><u>Płatność:</u></string>
+    <string name="del_card">Karta</string>
+    <string name="del_cash">Gotówka</string>
+    <string name="del_online">Online</string>
+    <string name="del_order_btn">Zamawiam</string>
+
+    <string-array name="NumberOfGuests">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="Time">
+        <item>Godzina</item>
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+    </string-array>
+</resources>
