@@ -7,8 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteCursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -31,7 +31,6 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,7 +55,6 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
     DatePickerDialog.OnDateSetListener date_set;
     DatabaseHelper db;
     List<Integer> labels = new ArrayList<>();
-    //List<String> labels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,15 +78,13 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         res_phone = findViewById(R.id.res_phone);
         res_mail = findViewById(R.id.res_mail);
 
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat ft = new SimpleDateFormat("dd.M.yyyy");
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat ft2 = new SimpleDateFormat("H");
+
+
+        @SuppressLint("SimpleDateFormat") final SimpleDateFormat ft = new SimpleDateFormat("d.M.yyyy");
         Calendar today = Calendar.getInstance();
         res_calendar.setText(ft.format(today.getTime()));
 
         labels = db.find_reserved(ft.format(today.getTime()));
-
-        //labels = db.find_reserved(ft.format(today.getTime()));
-        //res_enter.setText(String.valueOf(labels.get(0)));
 
         ArrayAdapter<String> number_guests = new ArrayAdapter<>(this, R.layout.custom_spinner, getResources().getStringArray(R.array.NumberOfGuests));
         number_guests.setDropDownViewResource(R.layout.custom_spinner_dropdown);
@@ -102,7 +98,7 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
 
             @Override
             public View getDropDownView(int position, View convertView,
-                                        ViewGroup parent) {
+                                        @NonNull ViewGroup parent) {
                 View view = super.getDropDownView(position, convertView, parent);
                 TextView tv = (TextView) view;
 
@@ -137,15 +133,14 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                     }
 
                     if (isCorrect) {
-                        StringBuffer buff = new StringBuffer();
-                        buff.append("Imię: " + res_name.getText().toString() + "\n");
-                        buff.append("Nazwisko: " + res_surname.getText().toString() + "\n");
-                        buff.append("Nr Telefonu: " + res_prefix.getText().toString() + " " + res_phone.getText().toString() + "\n");
-                        buff.append("Liczba osób: " + res_guests.getSelectedItem().toString() + "\n");
-                        buff.append("Data i godzina: " + res_calendar.getText().toString() + " " + res_time.getSelectedItem().toString() + "\n");
-                        buff.append("Dodatkowe informacje: " + res_inf.getText().toString() + "\n");
 
-                        show_messege("Dziękujemy za złożenie rezerwacji!", "Szczegóły rezerwacji:\n\n" + buff.toString());
+                        String buff = "Imię: " + res_name.getText().toString() + "\n" +
+                                "Nazwisko: " + res_surname.getText().toString() + "\n" +
+                                "Nr Telefonu: " + res_prefix.getText().toString() + " " + res_phone.getText().toString() + "\n" +
+                                "Liczba osób: " + res_guests.getSelectedItem().toString() + "\n" +
+                                "Data i godzina: " + res_calendar.getText().toString() + " " + res_time.getSelectedItem().toString() + "\n" +
+                                "Dodatkowe informacje: " + (TextUtils.isEmpty(res_inf.getText()) ? "-" : res_inf.getText().toString()) + "\n";
+                        show_messege("Dziękujemy za złożenie rezerwacji!", "Szczegóły rezerwacji:\n\n" + buff);
                     } else {
                         show_messege("Błąd", "Spróbuj ponownie później!");
                     }
@@ -200,6 +195,8 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         Intent home = new Intent(ReservationActivity.this, MainActivity.class);
         Intent reservation = new Intent(ReservationActivity.this, ReservationActivity.class);
         Intent delivery = new Intent(ReservationActivity.this, DeliveryActivity.class);
+        Intent about = new Intent(ReservationActivity.this, AboutUsActivity.class);
+        Intent contact = new Intent(ReservationActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
             case R.id.home:
@@ -258,6 +255,14 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                 //delivery
                 startActivity(delivery);
                 break;
+            case R.id.about_us:
+                //about us
+                startActivity(about);
+                break;
+            case R.id.contact:
+                //contact
+                startActivity(contact);
+                break;
             default:
                 //unknown error
         }
@@ -265,11 +270,19 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
     }
 
     public void show_messege (String title, String messege){
-        androidx.appcompat.app.AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
+        final Intent home = new Intent(ReservationActivity.this, MainActivity.class);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
         builder.setMessage(messege);
         builder.setTitle(title);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(home);
+            }
+        });
         builder.show();
+
     }
 
     @Override

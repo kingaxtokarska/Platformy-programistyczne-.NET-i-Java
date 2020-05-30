@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/tlo3"
+    android:orientation="vertical"
+    tools:context=".ContactActivity">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar">
+
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+    <TextView
+        android:id="@+id/contact_title"
+        android:textColor="@color/White"
+        android:textSize="40sp"
+        android:fontFamily="cursive"
+        android:layout_marginBottom="20sp"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_name_restaurant" />
+
+    <TextView
+        android:id="@+id/contact_adr"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:layout_marginStart="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40sp"
+        android:text="@string/contact_adr" />
+
+        <TextView
+            android:id="@+id/contact_hours_title"
+            android:textColor="@color/White"
+            android:textSize="40sp"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="20sp"
+            android:textStyle="italic"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_hours_title" />
+
+        <TextView
+            android:id="@+id/contact_hours"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:text="@string/contact_hours" />
+
+    </LinearLayout>
+
+</LinearLayout>

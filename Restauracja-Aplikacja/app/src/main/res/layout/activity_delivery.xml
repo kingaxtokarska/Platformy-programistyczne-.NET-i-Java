@@ -65,7 +65,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
-                android:hint="@string/del_num" />
+                android:hint="@string/del_num"
+                android:importantForAutofill="no" />
 
         </TableRow>
 
@@ -93,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -121,6 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -149,6 +152,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -177,6 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -205,6 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -233,6 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -261,6 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="number"
+                android:importantForAutofill="no"
                 android:hint="@string/del_num" />
 
         </TableRow>
@@ -299,6 +307,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPostalAddress"
+                android:importantForAutofill="no"
                 android:hint="@string/del_adress" />
 
             <EditText
@@ -311,7 +320,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
-                android:hint="@string/del_number" />
+                android:importantForAutofill="no"
+                android:hint="@string/del_number"
+                tools:ignore="TextFields" />
 
         </TableRow>
 
@@ -331,6 +342,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
+                android:importantForAutofill="no"
                 android:hint="@string/del_code" />
 
             <EditText
@@ -343,6 +355,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="text"
+                android:importantForAutofill="no"
                 android:hint="@string/del_city" />
 
         </TableRow>
@@ -381,6 +394,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPersonName"
+                android:importantForAutofill="no"
                 android:hint="@string/res_name" />
 
             <EditText
@@ -393,6 +407,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPersonName"
+                android:importantForAutofill="no"
                 android:hint="@string/res_surname" />
 
         </TableRow>
@@ -412,6 +427,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="phone"
+                android:importantForAutofill="no"
                 android:hint="@string/res_phone" />
 
         </TableRow>
@@ -431,6 +447,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textEmailAddress"
+                android:importantForAutofill="no"
                 android:hint="@string/res_mail" />
 
         </TableRow>
@@ -468,6 +485,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textLongMessage"
+                android:importantForAutofill="no"
                 android:hint="@string/res_information" />
 
         </TableRow>
@@ -498,7 +516,8 @@
 
             <RadioGroup
                 android:id="@+id/del_radio_group"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
 
                 <RadioButton
                     android:id="@+id/del_card"
@@ -528,6 +547,97 @@
                     android:text="@string/del_online" />
 
             </RadioGroup>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:id="@+id/card_line1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <EditText
+                android:id="@+id/del_card_name"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_border"
+                android:textColorHint="@color/Silver"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:importantForAutofill="no"
+                android:hint="@string/res_name" />
+
+            <EditText
+                android:id="@+id/del_card_surname"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/custom_border"
+                android:textColorHint="@color/Silver"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:importantForAutofill="no"
+                android:hint="@string/res_surname" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:id="@+id/card_line2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <EditText
+                android:id="@+id/del_card_number"
+                android:layout_weight="1"
+                android:background="@drawable/custom_border"
+                android:textColorHint="@color/Silver"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                android:hint="@string/del_card_number" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:id="@+id/card_line3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <EditText
+                android:id="@+id/del_card_date"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/custom_border"
+                android:textColorHint="@color/Silver"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="date"
+                android:importantForAutofill="no"
+                android:hint="@string/del_card_date" />
+
+            <EditText
+                android:id="@+id/del_card_ccv"
+                android:layout_weight="1"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/custom_border"
+                android:textColorHint="@color/Silver"
+                android:textColor="@color/White"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:importantForAutofill="no"
+                android:hint="@string/del_card_ccv" />
 
         </TableRow>
 

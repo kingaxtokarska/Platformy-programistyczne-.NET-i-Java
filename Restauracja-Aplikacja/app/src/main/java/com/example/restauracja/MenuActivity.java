@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,8 +32,10 @@ public class MenuActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView menu_meal;
-    GridView menu_names;
+    //GridView menu_names;
     DatabaseHelper db;
+
+    ListView menu_names, menu_prices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,36 +48,70 @@ public class MenuActivity extends AppCompatActivity {
         toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
 
-        menu_meal = findViewById(R.id.menu_meal);
+
+
         menu_names = findViewById(R.id.menu_names);
+        menu_prices = findViewById(R.id.menu_prices);
+
+
+
+
+        menu_meal = findViewById(R.id.menu_meal);
+        //menu_names = findViewById(R.id.menu_names);
 
         menu_meal.setText(name_meal);
 
         List<String> names = db.getLabels(name_meal, 1);
         List<String> prices = db.getLabels(name_meal, 2);
-        List<String> rows = new ArrayList<>();
+        List<String> rows_names = new ArrayList<>();
+        List<String> rows_prices = new ArrayList<>();
         for(int i = 1; i < names.size(); i++) {
-            rows.add(names.get(i));
-            rows.add(prices.get(i));
+            //rows.add(names.get(i));
+            //rows.add(prices.get(i));
+            rows_names.add(names.get(i));
+            rows_prices.add(prices.get(i));
         }
-
+        /*
         ArrayAdapter<String> adapter_rows = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rows){
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
-                TextView text = (TextView) view.findViewById(android.R.id.text1);
+                TextView text = view.findViewById(android.R.id.text1);
                 text.setTextColor(getResources().getColor(R.color.White));
                 return view;
             }
         };
-        menu_names.setNumColumns(2);
+        */
+
+        //menu_names.setNumColumns(2);
         //menu_names.setHorizontalSpacing(0);
         //menu_names.setVerticalSpacing(170);
         //menu_names.setColumnWidth(150);
-        //menu_names.setMinimumWidth(200);
-        menu_names.setAdapter(adapter_rows);
+        //menu_names.setAdapter(adapter_rows);
 
+        ArrayAdapter<String> adapter_rows_names = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rows_names){
+            @Override
+            public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = view.findViewById(android.R.id.text1);
+                text.setTextColor(getResources().getColor(R.color.White));
+                return view;
+            }
+        };
+        ArrayAdapter<String> adapter_rows_prices = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rows_prices){
+            @Override
+            public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView text = view.findViewById(android.R.id.text1);
+                text.setTextColor(getResources().getColor(R.color.White));
+                return view;
+            }
+        };
 
+        menu_names.setAdapter(adapter_rows_names);
+        menu_prices.setAdapter(adapter_rows_prices);
+        menu_names.setEnabled(false);
+        menu_prices.setEnabled(false);
 
     }
 
@@ -92,6 +128,8 @@ public class MenuActivity extends AppCompatActivity {
         Intent home = new Intent(MenuActivity.this, MainActivity.class);
         Intent reservation = new Intent(MenuActivity.this, ReservationActivity.class);
         Intent delivery = new Intent(MenuActivity.this, DeliveryActivity.class);
+        Intent about = new Intent(MenuActivity.this, AboutUsActivity.class);
+        Intent contact = new Intent(MenuActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
             case R.id.home:
@@ -149,6 +187,14 @@ public class MenuActivity extends AppCompatActivity {
             case R.id.delivery:
                 //delivery
                 startActivity(delivery);
+                break;
+            case R.id.about_us:
+                //about us
+                startActivity(about);
+                break;
+            case R.id.contact:
+                //contact
+                startActivity(contact);
                 break;
             default:
                 //unknown error

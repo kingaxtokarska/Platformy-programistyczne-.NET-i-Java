@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@android:id/text1"
     style="?attr/spinnerDropDownItemStyle"
     android:singleLine="true"
@@ -8,4 +9,5 @@
     android:ellipsize="marquee"
     android:textColor="@color/White"
     android:background="@color/BurlyWood"
-    android:textAlignment="viewStart"/>
+    android:textAlignment="viewStart"
+    tools:ignore="PrivateResource" />

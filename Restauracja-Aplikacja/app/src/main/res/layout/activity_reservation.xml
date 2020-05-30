@@ -70,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textLongMessage"
+        android:importantForAutofill="no"
         android:hint="@string/res_information" />
 
         </TableRow>
@@ -90,6 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textPersonName"
+        android:importantForAutofill="no"
         android:hint="@string/res_name" />
 
     <EditText
@@ -102,6 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textPersonName"
+        android:importantForAutofill="no"
         android:hint="@string/res_surname" />
 
         </TableRow>
@@ -121,7 +124,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="number"
-        android:text="@string/res_prefix" />
+        android:importantForAutofill="no"
+        android:text="@string/res_prefix"
+        tools:ignore="LabelFor" />
 
     <EditText
         android:id="@+id/res_phone"
@@ -133,6 +138,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="phone"
+        android:importantForAutofill="no"
         android:hint="@string/res_phone" />
 
         </TableRow>
@@ -152,6 +158,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textEmailAddress"
+        android:importantForAutofill="no"
         android:hint="@string/res_mail" />
 
         </TableRow>

@@ -10,31 +10,30 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import static com.example.restauracja.DatabaseHelper.starters;
-import static com.example.restauracja.DatabaseHelper.soups;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.fishes;
 import static com.example.restauracja.DatabaseHelper.desserts;
+import static com.example.restauracja.DatabaseHelper.fishes;
+import static com.example.restauracja.DatabaseHelper.meats;
+import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
+import static com.example.restauracja.DatabaseHelper.salads;
+import static com.example.restauracja.DatabaseHelper.soups;
+import static com.example.restauracja.DatabaseHelper.starters;
+import static com.example.restauracja.MainActivity.name_meal;
 
-public class MainActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity {
 
-    public static String name_meal = "";
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Strona główna");
+        toolbar.setTitle("Kontakt");
         setSupportActionBar(toolbar);
-
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent menu = new Intent(MainActivity.this, MenuActivity.class);
-        Intent home = new Intent(MainActivity.this, MainActivity.class);
-        Intent reservation = new Intent(MainActivity.this, ReservationActivity.class);
-        Intent delivery = new Intent(MainActivity.this, DeliveryActivity.class);
-        Intent about = new Intent(MainActivity.this, AboutUsActivity.class);
-        Intent contact = new Intent(MainActivity.this, ContactActivity.class);
+        Intent menu = new Intent(ContactActivity.this, MenuActivity.class);
+        Intent home = new Intent(ContactActivity.this, MainActivity.class);
+        Intent reservation = new Intent(ContactActivity.this, ReservationActivity.class);
+        Intent delivery = new Intent(ContactActivity.this, DeliveryActivity.class);
+        Intent about = new Intent(ContactActivity.this, AboutUsActivity.class);
+        Intent contact = new Intent(ContactActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
             case R.id.home:
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 //menu_soups
                 name_meal = soups;
                 startActivity(menu);
-               break;
+                break;
             case R.id.menu_salads:
                 //menu_salads
                 name_meal = salads;

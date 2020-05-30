@@ -1,39 +1,46 @@
 package com.example.restauracja;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-import static com.example.restauracja.DatabaseHelper.starters;
-import static com.example.restauracja.DatabaseHelper.soups;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.fishes;
 import static com.example.restauracja.DatabaseHelper.desserts;
+import static com.example.restauracja.DatabaseHelper.fishes;
+import static com.example.restauracja.DatabaseHelper.meats;
+import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
+import static com.example.restauracja.DatabaseHelper.salads;
+import static com.example.restauracja.DatabaseHelper.soups;
+import static com.example.restauracja.DatabaseHelper.starters;
+import static com.example.restauracja.MainActivity.name_meal;
 
-public class MainActivity extends AppCompatActivity {
+public class AboutUsActivity extends AppCompatActivity {
 
-    public static String name_meal = "";
     Toolbar toolbar;
+    TextView description;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_about_us);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Strona główna");
+        toolbar.setTitle("O nas");
         setSupportActionBar(toolbar);
 
-
+        description = findViewById(R.id.description);
+        description.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
     }
 
     @Override
@@ -45,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent menu = new Intent(MainActivity.this, MenuActivity.class);
-        Intent home = new Intent(MainActivity.this, MainActivity.class);
-        Intent reservation = new Intent(MainActivity.this, ReservationActivity.class);
-        Intent delivery = new Intent(MainActivity.this, DeliveryActivity.class);
-        Intent about = new Intent(MainActivity.this, AboutUsActivity.class);
-        Intent contact = new Intent(MainActivity.this, ContactActivity.class);
+        Intent menu = new Intent(AboutUsActivity.this, MenuActivity.class);
+        Intent home = new Intent(AboutUsActivity.this, MainActivity.class);
+        Intent reservation = new Intent(AboutUsActivity.this, ReservationActivity.class);
+        Intent delivery = new Intent(AboutUsActivity.this, DeliveryActivity.class);
+        Intent about = new Intent(AboutUsActivity.this, AboutUsActivity.class);
+        Intent contact = new Intent(AboutUsActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
             case R.id.home:
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 //menu_soups
                 name_meal = soups;
                 startActivity(menu);
-               break;
+                break;
             case R.id.menu_salads:
                 //menu_salads
                 name_meal = salads;
