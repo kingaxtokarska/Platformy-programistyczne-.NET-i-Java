@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static com.example.restauracja.DatabaseHelper.desserts;
 import static com.example.restauracja.DatabaseHelper.fishes;
@@ -25,6 +27,7 @@ import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
 import static com.example.restauracja.DatabaseHelper.salads;
 import static com.example.restauracja.DatabaseHelper.soups;
+
 import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
@@ -34,7 +37,6 @@ public class MenuActivity extends AppCompatActivity {
     TextView menu_meal;
     //GridView menu_names;
     DatabaseHelper db;
-
     ListView menu_names, menu_prices;
 
     @Override
@@ -45,49 +47,23 @@ public class MenuActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Menu");
+        toolbar.setTitle(R.string.menu);
         setSupportActionBar(toolbar);
-
-
 
         menu_names = findViewById(R.id.menu_names);
         menu_prices = findViewById(R.id.menu_prices);
 
-
-
-
         menu_meal = findViewById(R.id.menu_meal);
-        //menu_names = findViewById(R.id.menu_names);
-
         menu_meal.setText(name_meal);
 
         List<String> names = db.getLabels(name_meal, 1);
         List<String> prices = db.getLabels(name_meal, 2);
         List<String> rows_names = new ArrayList<>();
         List<String> rows_prices = new ArrayList<>();
-        for(int i = 1; i < names.size(); i++) {
-            //rows.add(names.get(i));
-            //rows.add(prices.get(i));
+        for(int i = 0; i < names.size(); i++) {
             rows_names.add(names.get(i));
             rows_prices.add(prices.get(i));
         }
-        /*
-        ArrayAdapter<String> adapter_rows = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rows){
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                View view = super.getView(position, convertView, parent);
-                TextView text = view.findViewById(android.R.id.text1);
-                text.setTextColor(getResources().getColor(R.color.White));
-                return view;
-            }
-        };
-        */
-
-        //menu_names.setNumColumns(2);
-        //menu_names.setHorizontalSpacing(0);
-        //menu_names.setVerticalSpacing(170);
-        //menu_names.setColumnWidth(150);
-        //menu_names.setAdapter(adapter_rows);
 
         ArrayAdapter<String> adapter_rows_names = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, rows_names){
             @Override
@@ -142,42 +118,42 @@ public class MenuActivity extends AppCompatActivity {
                 break;
             case R.id.menu_starters:
                 //menu_starters
-                name_meal = starters;
+                name_meal = getString(R.string.menu_starters);
                 startActivity(menu);
                 break;
             case R.id.menu_soups:
                 //menu_soups
-                name_meal = soups;
+                name_meal = getString(R.string.menu_soups);
                 startActivity(menu);
                 break;
             case R.id.menu_salads:
                 //menu_salads
-                name_meal = salads;
+                name_meal = getString(R.string.menu_salads);
                 startActivity(menu);
                 break;
             case R.id.menu_pasta:
                 //menu_pasta
-                name_meal = pasta;
+                name_meal = getString(R.string.menu_pasta);
                 startActivity(menu);
                 break;
             case R.id.menu_meats:
                 //menu_meats
-                name_meal = meats;
+                name_meal = getString(R.string.menu_meats);
                 startActivity(menu);
                 break;
             case R.id.menu_fishes:
                 //menu_fishes
-                name_meal = fishes;
+                name_meal = getString(R.string.menu_fishes);
                 startActivity(menu);
                 break;
             case R.id.menu_desserts:
                 //menu_desserts
-                name_meal = desserts;
+                name_meal = getString(R.string.menu_desserts);
                 startActivity(menu);
                 break;
             case R.id.menu_pizza:
                 //menu_pizza
-                name_meal = pizza;
+                name_meal = getString(R.string.menu_pizza);
                 startActivity(menu);
                 break;
             case R.id.reservation:
@@ -201,4 +177,5 @@ public class MenuActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

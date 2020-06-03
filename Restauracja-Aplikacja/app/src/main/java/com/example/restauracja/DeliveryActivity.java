@@ -35,6 +35,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,6 +48,7 @@ import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
 import static com.example.restauracja.DatabaseHelper.salads;
 import static com.example.restauracja.DatabaseHelper.soups;
+
 import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
@@ -76,7 +78,7 @@ public class DeliveryActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Dostawa");
+        toolbar.setTitle(R.string.delivery);
         setSupportActionBar(toolbar);
 
         spin1 = findViewById(R.id.spinner1);
@@ -122,7 +124,9 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
         final Spinner[] tab_spinners = {spin1, spin2, spin3, spin4, spin5, spin6, spin7, spin8};
-        final String[] tab_meals = {starters, soups, salads, pasta, meats, fishes, desserts, pizza};
+        final String[] tab_meals = {getString(R.string.menu_starters), getString(R.string.menu_soups), getString(R.string.menu_salads),
+                getString(R.string.menu_pasta), getString(R.string.menu_meats), getString(R.string.menu_fishes), getString(R.string.menu_desserts),
+                getString(R.string.menu_pizza)};
         final EditText[] tab_edits = {del_starters, del_soups, del_salads, del_pasta, del_meats, del_fishes, del_desserts, del_pizza};
         loading_spinners(tab_meals, tab_spinners);
 
@@ -217,18 +221,18 @@ public class DeliveryActivity extends AppCompatActivity {
 
                         if (isCorrect) {
 
-                            String buff = "Zamówienie: " + "\n" + order.toString() + "\n" +
-                                    "Imię: " + del_name.getText().toString() + "\n" +
-                                    "Nazwisko: " + del_surname.getText().toString() + "\n" +
-                                    "Nr Telefonu: " + del_phone.getText().toString() + "\n" +
-                                    "Adres: " + del_street.getText().toString() + " " + del_number.getText().toString() + " " + del_city.getText().toString() + "\n" +
-                                    "Metoda płatności: " + selectedRadioButton.getText().toString() + "\n" +
-                                    "Dodatkowe informacje: " + (TextUtils.isEmpty(del_inf.getText()) ? "-" : del_inf.getText().toString()) + "\n" +
-                                    "\nŁączna kwota: " + kwota + " zł" +
-                                    "\nCzas oczekiwania: " + wTime;
-                            show_messege("Dziękujemy za złożenie zamówienia!", "Szczegóły zamówienia:\n\n" + buff);
+                            String buff = getString(R.string.del_order) + "\n" + order.toString() + "\n" +
+                                    getString(R.string.res_name) + ": " + del_name.getText().toString() + "\n" +
+                                    getString(R.string.res_surname) + ": " + del_surname.getText().toString() + "\n" +
+                                    getString(R.string.res_phone) + ": " + del_phone.getText().toString() + "\n" +
+                                    getString(R.string.address) + del_street.getText().toString() + " " + del_number.getText().toString() + " " + del_city.getText().toString() + "\n" +
+                                    getString(R.string.payment) + selectedRadioButton.getText().toString() + "\n" +
+                                    getString(R.string.res_information) + ": " + (TextUtils.isEmpty(del_inf.getText()) ? "-" : del_inf.getText().toString()) + "\n" +
+                                    "\n" + getString(R.string.sum) + kwota + " zł" +
+                                    "\n" + getString(R.string.wTime) + wTime;
+                            show_messege(getString(R.string.del_mess_title), getString(R.string.del_mess_body) + "\n\n" + buff);
                         } else {
-                            show_messege("Błąd", "Spróbuj ponownie później!");
+                            show_messege(getString(R.string.err_title), getString(R.string.err_body));
                         }
 
                     }
@@ -267,42 +271,42 @@ public class DeliveryActivity extends AppCompatActivity {
                 break;
             case R.id.menu_starters:
                 //menu_starters
-                name_meal = starters;
+                name_meal = getString(R.string.menu_starters);
                 startActivity(menu);
                 break;
             case R.id.menu_soups:
                 //menu_soups
-                name_meal = soups;
+                name_meal = getString(R.string.menu_soups);
                 startActivity(menu);
                 break;
             case R.id.menu_salads:
                 //menu_salads
-                name_meal = salads;
+                name_meal = getString(R.string.menu_salads);
                 startActivity(menu);
                 break;
             case R.id.menu_pasta:
                 //menu_pasta
-                name_meal = pasta;
+                name_meal = getString(R.string.menu_pasta);
                 startActivity(menu);
                 break;
             case R.id.menu_meats:
                 //menu_meats
-                name_meal = meats;
+                name_meal = getString(R.string.menu_meats);
                 startActivity(menu);
                 break;
             case R.id.menu_fishes:
                 //menu_fishes
-                name_meal = fishes;
+                name_meal = getString(R.string.menu_fishes);
                 startActivity(menu);
                 break;
             case R.id.menu_desserts:
                 //menu_desserts
-                name_meal = desserts;
+                name_meal = getString(R.string.menu_desserts);
                 startActivity(menu);
                 break;
             case R.id.menu_pizza:
                 //menu_pizza
-                name_meal = pizza;
+                name_meal = getString(R.string.menu_pizza);
                 startActivity(menu);
                 break;
             case R.id.reservation:
@@ -330,7 +334,9 @@ public class DeliveryActivity extends AppCompatActivity {
     public void loading_spinners(String[] tab_meals, Spinner[] tab_spinners){
         for(int i = 0; i < tab_meals.length; i++)
         {
-            List<String> labels = db.getLabels(tab_meals[i], 1);
+            List<String> labels = new ArrayList<>();
+            labels.add(tab_meals[i]);
+            labels.addAll(db.getLabels(tab_meals[i], 1));
             ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.custom_spinner, labels);
             adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
             tab_spinners[i].setAdapter(adapter);

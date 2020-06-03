@@ -1,6 +1,7 @@
 package com.example.restauracja;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -41,8 +42,9 @@ import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
 import static com.example.restauracja.DatabaseHelper.salads;
 import static com.example.restauracja.DatabaseHelper.soups;
-import static com.example.restauracja.DatabaseHelper.starters;
 
+
+import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
 public class ReservationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -64,7 +66,7 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         db = new DatabaseHelper(this);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Rezerwacja");
+        toolbar.setTitle(R.string.reservation);
         setSupportActionBar(toolbar);
 
         res_guests = findViewById(R.id.res_guests);
@@ -79,40 +81,23 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         res_mail = findViewById(R.id.res_mail);
 
 
-
         @SuppressLint("SimpleDateFormat") final SimpleDateFormat ft = new SimpleDateFormat("d.M.yyyy");
         Calendar today = Calendar.getInstance();
         res_calendar.setText(ft.format(today.getTime()));
 
         labels = db.find_reserved(ft.format(today.getTime()));
+        final List<String> list_time = new ArrayList<>();
+        list_time.clear();
+        for(int i = 0; i < getResources().getStringArray(R.array.Time).length; i++)
+            if (!labels.contains(i)) list_time.add(getResources().getStringArray(R.array.Time)[i]);
+
+        ArrayAdapter<String> time = new ArrayAdapter<String>(ReservationActivity.this, R.layout.custom_spinner, list_time);
+        time.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+        res_time.setAdapter(time);
 
         ArrayAdapter<String> number_guests = new ArrayAdapter<>(this, R.layout.custom_spinner, getResources().getStringArray(R.array.NumberOfGuests));
         number_guests.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         res_guests.setAdapter(number_guests);
-        ArrayAdapter<String> time = new ArrayAdapter<String>(this, R.layout.custom_spinner, getResources().getStringArray(R.array.Time))
-        {
-            @Override
-            public boolean isEnabled(int position){
-                return !(labels.contains(position));
-            }
-
-            @Override
-            public View getDropDownView(int position, View convertView,
-                                        @NonNull ViewGroup parent) {
-                View view = super.getDropDownView(position, convertView, parent);
-                TextView tv = (TextView) view;
-
-                if(labels.contains(position)) {
-                    tv.setTextColor(Color.GRAY);
-                }
-                else {
-                    tv.setTextColor(Color.WHITE);
-                }
-                return view;
-            }
-        };
-        time.setDropDownViewResource(R.layout.custom_spinner_dropdown);
-        res_time.setAdapter(time);
 
         res_enter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,7 +106,8 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                 if(TextUtils.isEmpty(res_name.getText())) res_name.setError("Imię jest wymagane!");
                 else if(TextUtils.isEmpty(res_surname.getText())) res_surname.setError("Nazwisko jest wymagane!");
                 else if(TextUtils.isEmpty(res_phone.getText())) res_phone.setError("Telefon jest wymagany!");
-                else if(res_time.getSelectedItem().toString().equals("Godzina")) ((TextView)res_time.getSelectedView()).setError("Wybierz godzinę");
+                else if(res_time.getSelectedItem().toString().equals(getString(R.string.res_time))) ((TextView)res_time.getSelectedView()).setError("Wybierz godzinę");
+                else if(res_guests.getSelectedItem().toString().equals(getString(R.string.res_guests))) ((TextView)res_guests.getSelectedView()).setError("Podaj liczbę osób");
                 else {
                     isCorrect = db.set_reservation(res_name.getText().toString(), res_surname.getText().toString(), res_prefix.getText().toString()
                                     + res_phone.getText().toString(), res_mail.getText().toString(), res_guests.getSelectedItem().toString(), res_calendar.getText().toString(),
@@ -134,15 +120,15 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
 
                     if (isCorrect) {
 
-                        String buff = "Imię: " + res_name.getText().toString() + "\n" +
-                                "Nazwisko: " + res_surname.getText().toString() + "\n" +
-                                "Nr Telefonu: " + res_prefix.getText().toString() + " " + res_phone.getText().toString() + "\n" +
-                                "Liczba osób: " + res_guests.getSelectedItem().toString() + "\n" +
-                                "Data i godzina: " + res_calendar.getText().toString() + " " + res_time.getSelectedItem().toString() + "\n" +
-                                "Dodatkowe informacje: " + (TextUtils.isEmpty(res_inf.getText()) ? "-" : res_inf.getText().toString()) + "\n";
-                        show_messege("Dziękujemy za złożenie rezerwacji!", "Szczegóły rezerwacji:\n\n" + buff);
+                        String buff = getString(R.string.res_name) + ": " + res_name.getText().toString() + "\n" +
+                                getString(R.string.res_surname) + ": " + res_surname.getText().toString() + "\n" +
+                                getString(R.string.res_phone) + ": " + res_prefix.getText().toString() + " " + res_phone.getText().toString() + "\n" +
+                                getString(R.string.people_num) + ": " + res_guests.getSelectedItem().toString() + "\n" +
+                                getString(R.string.datetime) + ": " + res_calendar.getText().toString() + " " + res_time.getSelectedItem().toString() + "\n" +
+                                getString(R.string.res_information) + ": " + (TextUtils.isEmpty(res_inf.getText()) ? "-" : res_inf.getText().toString()) + "\n";
+                        show_messege(getString(R.string.mess_title), getString(R.string.mess_body) + "\n\n" + buff);
                     } else {
-                        show_messege("Błąd", "Spróbuj ponownie później!");
+                        show_messege(getString(R.string.err_title), getString(R.string.err_body));
                     }
                 }
             }
@@ -175,6 +161,13 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                 Log.d("ReservationActivity", "onDateSet: dd/mm/yyyy: " + dayOfMonth + "." + month + "." + year);
                 String date = dayOfMonth + "." + month + "." + year;
                 labels = db.find_reserved(date);
+                list_time.clear();
+                for(int i = 0; i < getResources().getStringArray(R.array.Time).length; i++)
+                    if (!labels.contains(i)) list_time.add(getResources().getStringArray(R.array.Time)[i]);
+
+                ArrayAdapter<String> time = new ArrayAdapter<String>(ReservationActivity.this, R.layout.custom_spinner, list_time);
+                time.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+                res_time.setAdapter(time);
                 res_calendar.setText(date);
             }
         };
@@ -209,42 +202,42 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                 break;
             case R.id.menu_starters:
                 //menu_starters
-                name_meal = starters;
+                name_meal = getString(R.string.menu_starters);
                 startActivity(menu);
                 break;
             case R.id.menu_soups:
                 //menu_soups
-                name_meal = soups;
+                name_meal = getString(R.string.menu_soups);
                 startActivity(menu);
                 break;
             case R.id.menu_salads:
                 //menu_salads
-                name_meal = salads;
+                name_meal = getString(R.string.menu_salads);
                 startActivity(menu);
                 break;
             case R.id.menu_pasta:
                 //menu_pasta
-                name_meal = pasta;
+                name_meal = getString(R.string.menu_pasta);
                 startActivity(menu);
                 break;
             case R.id.menu_meats:
                 //menu_meats
-                name_meal = meats;
+                name_meal = getString(R.string.menu_meats);
                 startActivity(menu);
                 break;
             case R.id.menu_fishes:
                 //menu_fishes
-                name_meal = fishes;
+                name_meal = getString(R.string.menu_fishes);
                 startActivity(menu);
                 break;
             case R.id.menu_desserts:
                 //menu_desserts
-                name_meal = desserts;
+                name_meal = getString(R.string.menu_desserts);
                 startActivity(menu);
                 break;
             case R.id.menu_pizza:
                 //menu_pizza
-                name_meal = pizza;
+                name_meal = getString(R.string.menu_pizza);
                 startActivity(menu);
                 break;
             case R.id.reservation:

@@ -3,6 +3,8 @@
     <string name="home">Strona główna</string>
     <string name="menu">Menu</string>
     <string name="about_us">O nas</string>
+    <string name="uk">uk</string>
+    <string name="pl">pl</string>
     <string name="contact">Kontakt</string>
     <string name="reservation">Rezerwacja</string>
     <string name="delivery">Dostawa</string>
@@ -11,21 +13,20 @@
     <string name="menu_salads">Sałatki</string>
     <string name="menu_pasta">Makarony</string>
     <string name="menu_meats">Mięsa</string>
-    <string name="menu_fishes">Ryby i owoce morza</string>
+    <string name="menu_fishes">Ryby</string>
     <string name="menu_desserts">Desery</string>
-    <string name="menu_pizza">Pizza</string>
+    <string name="menu_pizza">Pizze</string>
     <string name="name_restaurant">Restauracja\nKornik</string>
     <string name="contact_name_restaurant">Restauracja Kornik</string>
-    <string name="contact_adr">ul. Szewska 27\n50–139 Wrocław</string>
+    <string name="contact_adr" translatable="false">ul. Szewska 27\n50–139 Wrocław</string>
     <string name="contact_hours_title">Godziny otwarcia</string>
-    <string name="contact_hours">Poniedziałek – Piątek 9:00 – 22:00\nSobota i Niedziela 9:00 – 24:00</string>
+    <string name="contact_hours">Poniedziałek – Piątek 9:00 – 22:00 Sobota i Niedziela 9:00 – 24:00</string>
     <string name="res_information">Dodatkowe informacje</string>
     <string name="res_name">Imię</string>
     <string name="res_surname">Nazwisko</string>
-    <string name="res_prefix">+48</string>
+    <string name="res_prefix" translatable="false">+48</string>
     <string name="res_phone">Numer tel.</string>
     <string name="res_mail">Mail</string>
-    <string name="res_calendar">ELO</string>
     <string name="res_enter">Zarezerwuj stolik</string>
     <string name="del_num">Ilość</string>
     <string name="del_order"><u>Zamówienie:</u></string>
@@ -34,8 +35,7 @@
     <string name="del_number">Nr domu</string>
     <string name="del_code">Kod pocztowy</string>
     <string name="del_city">Miasto</string>
-    <string name="del_adres_title"><u tools:ignore="Typos">Adres:</u></string>
-    <string name="del_inf"><u>Uwagi:</u></string>
+    <string name="del_adres_title" tools:ignore="Typos"><u>Adres:</u></string>
     <string name="del_payment"><u>Płatność:</u></string>
     <string name="del_card">Karta</string>
     <string name="del_cash">Gotówka</string>
@@ -44,6 +44,20 @@
     <string name="del_card_number">Nr karty</string>
     <string name="del_card_ccv">CCV</string>
     <string name="del_card_date">Data</string>
+    <string name="res_guests">Osoby</string>
+    <string name="res_time">Godzina</string>
+    <string name="people_num">Liczba osób</string>
+    <string name="datetime">Data i czas</string>
+    <string name="mess_title">Dziękujemy za złożenie rezerwacji!</string>
+    <string name="mess_body">Szczegóły rezerwacji:</string>
+    <string name="err_title">Błąd</string>
+    <string name="err_body">Spróbuj ponownie później!</string>
+    <string name="address" tools:ignore="Typos">Adres:</string>
+    <string name="payment">Metoda płatności:</string>
+    <string name="sum">Łączna kwota:</string>
+    <string name="wTime">Czas oczekiwania:</string>
+    <string name="del_mess_title">Dziękujemy za złożenie zamówienia!</string>
+    <string name="del_mess_body">Szczegóły zamówienia:</string>
     <string name="description">
         Restauracja KORNIK oferuje najlepsze połączenia kulinarne w mieście.
         Inspirując się tradycyjnymi daniami z różnych stron świata, zabiera swoich gości w prawdziwą podróż smaków.
@@ -54,6 +68,7 @@
     </string>
 
     <string-array name="NumberOfGuests">
+        <item>@string/res_guests</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
@@ -68,7 +83,7 @@
     </string-array>
 
     <string-array name="Time">
-        <item>Godzina</item>
+        <item>@string/res_time</item>
         <item>9:00</item>
         <item>10:00</item>
         <item>11:00</item>
@@ -83,4 +98,5 @@
         <item>20:00</item>
         <item>21:00</item>
     </string-array>
+    <string name="del_inf"><u>Uwagi:</u></string>
 </resources>

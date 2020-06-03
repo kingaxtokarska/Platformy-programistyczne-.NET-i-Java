@@ -4,6 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/icon_pl"
+        android:icon="@drawable/ic_poland"
+        android:title="@string/pl"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/icon_uk"
+        android:icon="@drawable/ic_uk"
+        android:title="@string/uk"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
     android:id="@+id/home"
     android:title="@string/home"
     app:showAsAction="never">

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Restaurat</string>
+    <string name="menu_pasta">Pasta</string>
+    <string name="home">Home</string>
+    <string name="menu">Menu</string>
+    <string name="uk">uk</string>
+    <string name="pl">pl</string>
+    <string name="about_us">About us</string>
+    <string name="contact">Contact</string>
+    <string name="reservation">Reservation</string>
+    <string name="delivery">Delivery</string>
+    <string name="menu_starters">Starters</string>
+    <string name="menu_soups">Soups</string>
+    <string name="menu_salads">Salads</string>
+    <string name="menu_meats">Meats</string>
+    <string name="menu_fishes">Fishes</string>
+    <string name="menu_desserts">Desserts</string>
+    <string name="menu_pizza">Pizza</string>
+    <string name="name_restaurant">Restaurant\nKornik</string>
+    <string name="contact_name_restaurant">Restaurant Kornik</string>
+    <string name="contact_hours_title">Opening hours</string>
+    <string name="contact_hours">Monday – Friday 9:00 – 22:00 Saturday and Sunday 9:00 – 24:00</string>
+    <string name="res_information">Additional information</string>
+    <string name="res_name">Name</string>
+    <string name="res_surname">Surname</string>
+    <string name="res_phone">Phone</string>
+    <string name="res_mail">Mail</string>
+    <string name="res_enter">Book a table</string>
+    <string name="del_num">Qty</string>
+    <string name="del_order"><u>Order:</u></string>
+    <string name="del_contact"><u>Contact details:</u></string>
+    <string name="del_adress">Street</string>
+    <string name="del_number">No.</string>
+    <string name="del_code">Postal code</string>
+    <string name="del_city">City</string>
+    <string name="del_adres_title"><u>Address:</u></string>
+    <string name="del_inf"><u>Comments:</u></string>
+    <string name="del_payment"><u>Payment:</u></string>
+    <string name="del_card">Card</string>
+    <string name="del_cash">Cash</string>
+    <string name="del_online">Online</string>
+    <string name="del_order_btn">Order</string>
+    <string name="del_card_number">Card number</string>
+    <string name="del_card_ccv">CCV</string>
+    <string name="del_card_date">Date</string>
+    <string name="res_guests">Guests</string>
+    <string name="res_time">Time</string>
+    <string name="people_num">Number of people</string>
+    <string name="datetime">Date and time</string>
+    <string name="mess_title">Thank you for your reservation!</string>
+    <string name="mess_body">Booking details:</string>
+    <string name="err_title">Error</string>
+    <string name="err_body">Please try again later!</string>
+    <string name="address">Address:</string>
+    <string name="payment">Payment:</string>
+    <string name="sum">Total:</string>
+    <string name="wTime">Waiting time:</string>
+    <string name="del_mess_title">Thank you for your order!</string>
+    <string name="del_mess_body">Details of the order:</string>
+    <string name="description">
+        The KORNIK restaurant offers the best culinary connections in the city.
+        Inspired by traditional dishes from around the world, it takes its guests on a real journey of flavors.
+        It boasts, above all, a wide selection of pasta dishes, a pizza baked according to strict
+        Italian recipe and heavenly desserts. The convenience of customers also includes additional advantages
+        like a high standard of service, easy-to-use table booking system, attractive interior of the premises,
+        and recently also efficient delivery of orders.
+    </string>
+</resources>

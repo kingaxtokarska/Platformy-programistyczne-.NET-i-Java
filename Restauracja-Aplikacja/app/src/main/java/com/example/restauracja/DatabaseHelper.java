@@ -23,7 +23,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static String meats = "Mięsa";
     static String fishes = "Ryby";
     static String desserts = "Desery";
-    static String pizza = "Pizza";
+    static String pizza = "Pizze";
+
+    static String startersEN = "Starters";
+    static String soupsEN = "Soups";
+    static String saladsEN = "Salads";
+    static String pastaEN = "Pasta";
+    static String meatsEN = "Meats";
+    static String fishesEN = "Fishes";
+    static String dessertsEN = "Desserts";
+    static String pizzaEN = "Pizza";
 
     private static String reservations = "Rezerwacje";
     private static String orders = "Zamówienia";
@@ -49,6 +58,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(" create table " + orders + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, SURNAME TEXT, PHONE TEXT, EMAIL TEXT, " +
         "STREET TEXT, NUMBER TEXT, CODE TEXT, CITY TEXT, INFORMATION TEXT, PAYMENT TEXT, FOOD TEXT, RTIME TEXT, " +
                 "CNAME TEXT, CNUMBER TEXT, CDATE TEXT, CCV TEXT) ");
+
+        db.execSQL(" create table " + startersEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + soupsEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + saladsEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + pastaEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + meatsEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + fishesEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + dessertsEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+        db.execSQL(" create table " + pizzaEN + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PRICE TEXT) ");
+
         initialize(db);
     }
 
@@ -64,11 +83,188 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(" DROP TABLE IF EXISTS " + pizza);
         db.execSQL(" DROP TABLE IF EXISTS " + reservations);
         db.execSQL(" DROP TABLE IF EXISTS " + orders);
+
+        db.execSQL(" DROP TABLE IF EXISTS " + startersEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + soupsEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + saladsEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + pastaEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + meatsEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + fishesEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + dessertsEN);
+        db.execSQL(" DROP TABLE IF EXISTS " + pizzaEN);
+
         onCreate(db);
     }
 
     private void initialize (SQLiteDatabase db) {
-        push_data(db, starters, starters, "0");
+        push_data(db, startersEN, "GRILLED VEGETABLES", "19 zł");
+        push_data(db, startersEN, "ALPINE BEEF TATARE", "39 zł");
+        push_data(db, startersEN, "SALMON TARTARE", "36 zł");
+        push_data(db, startersEN, "CARPACCIO DI MANZO", "39 zł");
+        push_data(db, startersEN, "BEEF CARPACCIO WITH THE TENDERLOIN", "29 zł");
+        push_data(db, startersEN, "CROUTONS WITH EGGPLANT PASTE AND NAVY BLUE", "18 zł");
+        push_data(db, startersEN, "COURGETTE FRITTERS WITH SMOKED SALMON", "28 zł");
+        push_data(db, startersEN, "MEXICAN NACHOS", "17 zł");
+        push_data(db, startersEN, "MOZARELLA DI BUFFALA WITH SALSA", "23 zł");
+        push_data(db, startersEN, "PORK KNUCKLE", "29 zł");
+        push_data(db, startersEN, "LIVER MOUSSE", "38 zł");
+        push_data(db, startersEN, "POTATO PANCAKES WITH SALMON", "39 zł");
+        push_data(db, startersEN, "DUMPLINGS WITH VEAL AND MUSHROOMS", "32 zł");
+        push_data(db, startersEN, "VEA KIDNEY", "39 zł");
+        push_data(db, startersEN, "PANCAKES WITH SPINACH", "38 zł");
+        push_data(db, startersEN, "PANCAKES WITH CRAYFISH", "49 zł");
+        push_data(db, startersEN, "PLATED SMOKED MEAT", "18 zł");
+        push_data(db, startersEN, "POTATO DUMPLINGS", "25 zł");
+        push_data(db, startersEN, "CRUISING NUGETS", "29 zł");
+        push_data(db, startersEN, "VEGETABLE FRITTERS", "34 zł");
+
+        push_data(db, soupsEN, "CHICKEN SOUP", "17 zł");
+        push_data(db, soupsEN, "TOMATO CREAM", "19 zł");
+        push_data(db, soupsEN, "ONION SOUP", "18 zł");
+        push_data(db, soupsEN, "ROVENCAL FISH SOUP", "21 zł");
+        push_data(db, soupsEN, "SOUR SOUP", "15 zł");
+        push_data(db, soupsEN, "CUCUMBER SOUP", "19 zł");
+        push_data(db, soupsEN, "WHITE BORSCH", "18 zł");
+        push_data(db, soupsEN, "UKRAINIAN BORSCH", "19 zł");
+        push_data(db, soupsEN, "TRADITIONAL RED BORSCH WITH MEAT RAVIOLI", "21 zł");
+        push_data(db, soupsEN, "THAI SOUP", "20 zł");
+        push_data(db, soupsEN, "TRIPE", "15 zł");
+        push_data(db, soupsEN, "SPANISH SOUP WITH CHORIZO", "19 zł");
+        push_data(db, soupsEN, "CABBAGE SOUP WITH YOUNG SPROUTS", "18 zł");
+        push_data(db, soupsEN, "BEET GREEN SOUP", "18 zł");
+        push_data(db, soupsEN, "BARLEY SOUP", "21 zł");
+        push_data(db, soupsEN, "CARROT CREAM", "17 zł");
+        push_data(db, soupsEN, "MUSHROOM SOUP", "15 zł");
+        push_data(db, soupsEN, "PEAR CREAM", "21 zł");
+        push_data(db, soupsEN, "MEXICAN SOUP", "23 zł");
+        push_data(db, soupsEN, "CHINESE SOUP WITH CHICKEN", "25 zł");
+
+        push_data(db, saladsEN, "GREEK SALAD", "28 zł");
+        push_data(db, saladsEN, "CAESAR SALAD", "34 zł");
+        push_data(db, saladsEN, "PARIS SALAD", "33 zł");
+        push_data(db, saladsEN, "SALAD WITH GRILLED SHRIMPS", "39 zł");
+        push_data(db, saladsEN, "SALAD WITH CHICKEN, BACON AND PARMESAN", "29 zł");
+        push_data(db, saladsEN, "SUMMER SALAD", "32 zł");
+        push_data(db, saladsEN, "SALAD WITH GOAT CHEESE AND NUTS", "31 zł");
+        push_data(db, saladsEN, "SALAD GREEN GARDENS", "38 zł");
+        push_data(db, saladsEN, "BUTTERY SALAD", "34 zł");
+        push_data(db, saladsEN, "SALAD WITH BAKED PEPPER", "39 zł");
+        push_data(db, saladsEN, "ROMAN SALAD", "29 zł");
+        push_data(db, saladsEN, "SALAD NICOISE", "31 zł");
+        push_data(db, saladsEN, "SALAD WITH HALLOUMI CHEESE", "30 zł");
+        push_data(db, saladsEN, "SALAD WITH CRANBERRY AND FETA", "31 zł");
+        push_data(db, saladsEN, "HONEY SALAD", "19 zł");
+        push_data(db, saladsEN, "WALDORF SALAD", "35 zł");
+        push_data(db, saladsEN, "NEW YORK SALAD", "32 zł");
+        push_data(db, saladsEN, "MAGIC SALAD", "31 zł");
+        push_data(db, saladsEN, "SPINACH SALAD", "27 zł");
+        push_data(db, saladsEN, "KING SALAD", "35 zł");
+
+        push_data(db, pastaEN, "SPAGHETTI BOLOGNESE", "28 zł");
+        push_data(db, pastaEN, "SPAGHETTI CARBONARA", "29 zł");
+        push_data(db, pastaEN, "PENNE AL FORNO", "30 zł");
+        push_data(db, pastaEN, "LASAGNE BOLOGNESE", "32 zł");
+        push_data(db, pastaEN, "TAGLIATELLE WITH A SALMON", "41 zł");
+        push_data(db, pastaEN, "SPINACH TAGLIATELLE", "39 zł");
+        push_data(db, pastaEN, "PAD-THAI WITH CHICKEN", "30 zł");
+        push_data(db, pastaEN, "PAD-THAI WITH SHRIMPS", "35 zł");
+        push_data(db, pastaEN, "PAD-THAI WITH TOFU", "35 zł");
+        push_data(db, pastaEN, "BLACK PASTA WITH SEAFOOD", "31 zł");
+        push_data(db, pastaEN, "GNOCCHI WITH COURGETTE AND CHORIZO", "29 zł");
+        push_data(db, pastaEN, "GNOCCHI WITH GOAT CHEESE AND TRUFFLE", "29 zł");
+        push_data(db, pastaEN, "ROTONDI WITH A RABBIT", "34 zł");
+        push_data(db, pastaEN, "PAPPARDELLE WITH BEEF", "38 zł");
+        push_data(db, pastaEN, "PASTA WITH GRILLED VEGETABLES", "29 zł");
+        push_data(db, pastaEN, "PASTA WITH SHRIMPS", "36 zł");
+        push_data(db, pastaEN, "LINGUINE WITH COURGETTE", "29 zł");
+        push_data(db, pastaEN, "BLACK TAGLIOLINI", "41 zł");
+        push_data(db, pastaEN, "AGLIO OLIO E PEPERONCINO", "39 zł");
+        push_data(db, pastaEN, "CANNELLONI BOLOGNESE", "36 zł");
+
+        push_data(db, meatsEN, "RUDDY DUCK FROM FURNACE", "52 zł");
+        push_data(db, meatsEN, "GRILLED PORK LOIN", "48 zł");
+        push_data(db, meatsEN, "BEEF STEAK", "76 zł");
+        push_data(db, meatsEN, "CHICKEN BREAST WITH SPINACH", "34 zł");
+        push_data(db, meatsEN, "STAIN BREADS WITH SAUCE WITH FRESH MUSHROOM", "39 zł");
+        push_data(db, meatsEN, "COUNTRY BURGER", "29 zł");
+        push_data(db, meatsEN, "BURRITO", "28 zł");
+        push_data(db, meatsEN, "PORK CHOP WITH SAUERKRAUT", "30 zł");
+        push_data(db, meatsEN, "VEAL SCHNITZEL", "54 zł");
+        push_data(db, meatsEN, "CORN CHICKEN", "39 zł");
+        push_data(db, meatsEN, "ROAST BEEF", "62 zł");
+        push_data(db, meatsEN, "BBQ PORK RIBS", "38 zł");
+        push_data(db, meatsEN, "BAKED VEAL", "55 zł");
+        push_data(db, meatsEN, "VEAL LIVER", "44 zł");
+        push_data(db, meatsEN, "DEER COMBER", "79 zł");
+        push_data(db, meatsEN, "GOULASH PIG'S", "28 zł");
+        push_data(db, meatsEN, "KNUCKLE", "59 zł");
+        push_data(db, meatsEN, "BOAR", "79 zł");
+        push_data(db, meatsEN, "PORK MEDALLIONS", "49 zł");
+        push_data(db, meatsEN, "BAKED LAMB IN MUSHROOM SAUCE", "48 zł");
+
+        push_data(db, fishesEN, "BAKED ZANDER FILLET", "42 zł");
+        push_data(db, fishesEN, "SALMON STEAK WITH GRILLED VEGETABLES", "52 zł");
+        push_data(db, fishesEN, "TIGER SHRIMPS", "56 zł");
+        push_data(db, fishesEN, "SHRIMPS IN WHITE WINE", "43 zł");
+        push_data(db, fishesEN, "BUTTERY BLACK CAT", "37 zł");
+        push_data(db, fishesEN, "SPICY BLACK CAT", "37 zł");
+        push_data(db, fishesEN, "FRENCH FRESH MOULES", "27 zł");
+        push_data(db, fishesEN, "SPANISH FRESH MOULES", "27 zł");
+        push_data(db, fishesEN, "SCOTTISH SALMON WITH LEMON SAUCE A'LA BEARNAISE", "38 zł");
+        push_data(db, fishesEN, "MARINATED SALMON IN HONEY AND MUSTARD", "46 zł");
+        push_data(db, fishesEN, "SUM FILLET", "56 zł");
+        push_data(db, fishesEN, "COD FILLET", "73 zł");
+        push_data(db, fishesEN, "HALIBUT FILLET", "41 zł");
+        push_data(db, fishesEN, "FILLET OF TROUT", "39 zł");
+        push_data(db, fishesEN, "OCTOPUS", "69 zł");
+        push_data(db, fishesEN, "BAKED STURGEON WITH NUTS", "57 zł");
+        push_data(db, fishesEN, "HUNGARY FISH", "39 zł");
+        push_data(db, fishesEN, "CARP WITH MUSHROOMS AND RAISINS", "44 zł");
+        push_data(db, fishesEN, "MEXICAN SALMON", "56 zł");
+        push_data(db, fishesEN, "TROUT STUFFED SAUERKRAUT", "56 zł");
+
+        push_data(db, dessertsEN, "PANNA COTTA", "17 zł");
+        push_data(db, dessertsEN, "CHOCOLATE FONDANT", "19 zł");
+        push_data(db, dessertsEN, "DATE CAKE", "26 zł");
+        push_data(db, dessertsEN, "CHIA'S VEGAN PUDDING", "16 zł");
+        push_data(db, dessertsEN, "CREME BRULEE", "17 zł");
+        push_data(db, dessertsEN, "TIRAMISU", "16 zł");
+        push_data(db, dessertsEN, "CARROT CAKE", "14 zł");
+        push_data(db, dessertsEN, "CHEESECAKE WITH RASBERRY SAUCE", "15 zł");
+        push_data(db, dessertsEN, "APPLE PIE GLUTEN FREE", "16 zł");
+        push_data(db, dessertsEN, "ICE CREAM WITH FRUITS", "18 zł");
+        push_data(db, dessertsEN, "HOME CAKE", "19 zł");
+        push_data(db, dessertsEN, "DATE MERINGUE", "22 zł");
+        push_data(db, dessertsEN, "ALMOND MERINGUE", "22 zł");
+        push_data(db, dessertsEN, "APPLE PIE", "24 zł");
+        push_data(db, dessertsEN, "FONDANT", "23 zł");
+        push_data(db, dessertsEN, "BASILUS MOUSSE", "25 zł");
+        push_data(db, dessertsEN, "ICE CREAM PLATE", "29 zł");
+        push_data(db, dessertsEN, "RABBAR CAKE WITH WHITE CREAM", "18 zł");
+        push_data(db, dessertsEN, "BROWNIE WITH RASPBERRY MOUSSE AND VANILLA ICE CREAM", "16 zł");
+        push_data(db, dessertsEN, "LEMON TART", "21 zł");
+
+        push_data(db, pizzaEN, "PIZZA MARGHERITA", "18 zł");
+        push_data(db, pizzaEN, "PIZZA FUNGHI", "21 zł");
+        push_data(db, pizzaEN, "PIZZA PROSCIUTTO", "23 zł");
+        push_data(db, pizzaEN, "PIZZA AMERICANA", "23 zł");
+        push_data(db, pizzaEN, "PIZZA HAWAII", "24 zł");
+        push_data(db, pizzaEN, "PIZZA DIAVOLA", "25 zł");
+        push_data(db, pizzaEN, "PIZZA QUATTRO FORMAGGI", "26 zł");
+        push_data(db, pizzaEN, "PIZZA VEGETARIANA", "30 zł");
+        push_data(db, pizzaEN, "PIZZA CAPRICCIOSA", "31 zł");
+        push_data(db, pizzaEN, "PIZZA MIĘSNA", "34 zł");
+        push_data(db, pizzaEN, "PIZZA PRIMAVERA", "33 zł");
+        push_data(db, pizzaEN, "PIZZA PEPERONI", "29 zł");
+        push_data(db, pizzaEN, "PIZZA KEBAB", "31 zł");
+        push_data(db, pizzaEN, "PIZZA TEKSAŃSKI KURCZAK", "34 zł");
+        push_data(db, pizzaEN, "PIZZA GRECKA", "32 zł");
+        push_data(db, pizzaEN, "PIZZA TONNO", "29 zł");
+        push_data(db, pizzaEN, "PIZZA MEKSYKAŃSKA", "34 zł");
+        push_data(db, pizzaEN, "PIZZA CARBONARA", "30 zł");
+        push_data(db, pizzaEN, "PIZZA BARBECUE", "33 zł");
+        push_data(db, pizzaEN, "PIZZA SPECIALE", "44 zł");
+
         push_data(db, starters, "GRILLOWANE WARZYWA", "19 zł");
         push_data(db, starters, "ALPEJSKI TATAR WOŁOWY", "39 zł");
         push_data(db, starters, "TATAR Z ŁOSOSIA", "36 zł");
@@ -90,7 +286,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, starters, "CHRUPIĄCE NUGETSY", "29 zł");
         push_data(db, starters, "PLACUSZKI WARZYWNE", "34 zł");
 
-        push_data(db, soups, soups, "0");
         push_data(db, soups, "ROSÓŁ DOMOWY", "17 zł");
         push_data(db, soups, "KREM Z POMIDORÓW", "19 zł");
         push_data(db, soups, "ZUPA CEBULOWA", "18 zł");
@@ -112,7 +307,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, soups, "ZUPA MEKSYKAŃSKA", "23 zł");
         push_data(db, soups, "ZUPA CHIŃSKA Z KURCZAKIEM", "25 zł");
 
-        push_data(db, salads, salads, "0");
         push_data(db, salads, "SAŁATKA GRECKA", "28 zł");
         push_data(db, salads, "SAŁATKA CAESAR", "34 zł");
         push_data(db, salads, "SAŁATKA PARYSKA", "33 zł");
@@ -134,7 +328,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, salads, "SAŁATKA SZPINAKOWA", "27 zł");
         push_data(db, salads, "SAŁATKA KRÓLEWSKA", "35 zł");
 
-        push_data(db, pasta, pasta, "0");
         push_data(db, pasta, "SPAGHETTI BOLOGNESE", "28 zł");
         push_data(db, pasta, "SPAGHETTI CARBONARA", "29 zł");
         push_data(db, pasta, "PENNE AL FORNO", "30 zł");
@@ -156,7 +349,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, pasta, "AGLIO OLIO E PEPERONCINO", "39 zł");
         push_data(db, pasta, "CANNELLONI BOLOGNESE", "36 zł");
 
-        push_data(db, meats, meats, "0");
         push_data(db, meats, "RUMIANA KACZKA Z PIECA", "52 zł");
         push_data(db, meats, "GRILLOWANA POLĘDWICZKA WIEPRZOWA", "48 zł");
         push_data(db, meats, "STEK Z POLĘDWICY WOŁOWEJ", "76 zł");
@@ -178,7 +370,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, meats, "MEDALIONY WIEPRZOWE", "49 zł");
         push_data(db, meats, "PIECZEŃ JAGNIĘCA W SOSIE WINNO-KURKOWYM", "48 zł");
 
-        push_data(db, fishes, fishes, "0");
         push_data(db, fishes, "PIECZONY FILET Z SANDACZA", "42 zł");
         push_data(db, fishes, "STEK Z ŁOSOSIA Z GRILLOWANYMI WARZYWAMI", "52 zł");
         push_data(db, fishes, "KREWETKI TYGRYSIE", "56 zł");
@@ -200,7 +391,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, fishes, "ŁOSOŚ PO MEKSYKAŃSKU", "56 zł");
         push_data(db, fishes, "PSTRĄG FASZEROWANY KISZONĄ KAPUSTĄ", "56 zł");
 
-        push_data(db, desserts, desserts, "0");
         push_data(db, desserts, "PANNA COTTA", "17 zł");
         push_data(db, desserts, "CZEKOLADOWY FONDANT", "19 zł");
         push_data(db, desserts, "DAKTYLOWY TORT", "26 zł");
@@ -222,7 +412,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         push_data(db, desserts, "BROWNIE Z MUSEM MALINOWYM I LODAMI WANILIOWYMI", "16 zł");
         push_data(db, desserts, "TARTA CYTRYNOWA", "21 zł");
 
-        push_data(db, pizza, pizza, "0");
         push_data(db, pizza, "PIZZA MARGHERITA", "18 zł");
         push_data(db, pizza, "PIZZA FUNGHI", "21 zł");
         push_data(db, pizza, "PIZZA PROSCIUTTO", "23 zł");

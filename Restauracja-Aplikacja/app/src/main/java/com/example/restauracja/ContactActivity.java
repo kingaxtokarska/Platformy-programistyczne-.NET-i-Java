@@ -17,6 +17,7 @@ import static com.example.restauracja.DatabaseHelper.pasta;
 import static com.example.restauracja.DatabaseHelper.pizza;
 import static com.example.restauracja.DatabaseHelper.salads;
 import static com.example.restauracja.DatabaseHelper.soups;
+
 import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
@@ -30,7 +31,7 @@ public class ContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
 
         toolbar = findViewById(R.id.app_bar);
-        toolbar.setTitle("Kontakt");
+        toolbar.setTitle(R.string.contact);
         setSupportActionBar(toolbar);
     }
 
@@ -62,42 +63,42 @@ public class ContactActivity extends AppCompatActivity {
                 break;
             case R.id.menu_starters:
                 //menu_starters
-                name_meal = starters;
+                name_meal = getString(R.string.menu_starters);
                 startActivity(menu);
                 break;
             case R.id.menu_soups:
                 //menu_soups
-                name_meal = soups;
+                name_meal = getString(R.string.menu_soups);
                 startActivity(menu);
                 break;
             case R.id.menu_salads:
                 //menu_salads
-                name_meal = salads;
+                name_meal = getString(R.string.menu_salads);
                 startActivity(menu);
                 break;
             case R.id.menu_pasta:
                 //menu_pasta
-                name_meal = pasta;
+                name_meal = getString(R.string.menu_pasta);
                 startActivity(menu);
                 break;
             case R.id.menu_meats:
                 //menu_meats
-                name_meal = meats;
+                name_meal = getString(R.string.menu_meats);
                 startActivity(menu);
                 break;
             case R.id.menu_fishes:
                 //menu_fishes
-                name_meal = fishes;
+                name_meal = getString(R.string.menu_fishes);
                 startActivity(menu);
                 break;
             case R.id.menu_desserts:
                 //menu_desserts
-                name_meal = desserts;
+                name_meal = getString(R.string.menu_desserts);
                 startActivity(menu);
                 break;
             case R.id.menu_pizza:
                 //menu_pizza
-                name_meal = pizza;
+                name_meal = getString(R.string.menu_pizza);
                 startActivity(menu);
                 break;
             case R.id.reservation:
