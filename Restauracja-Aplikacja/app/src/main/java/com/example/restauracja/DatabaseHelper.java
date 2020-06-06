@@ -16,23 +16,23 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String database_name = "RestaurantDB";
-    static String starters = "Przystawki";
-    static String soups = "Zupy";
-    static String salads = "Sałatki";
-    static String pasta = "Makarony";
-    static String meats = "Mięsa";
-    static String fishes = "Ryby";
-    static String desserts = "Desery";
-    static String pizza = "Pizze";
+    private static String starters = "Przystawki";
+    private static String soups = "Zupy";
+    private static String salads = "Sałatki";
+    private static String pasta = "Makarony";
+    private static String meats = "Mięsa";
+    private static String fishes = "Ryby";
+    private static String desserts = "Desery";
+    private static String pizza = "Pizze";
 
-    static String startersEN = "Starters";
-    static String soupsEN = "Soups";
-    static String saladsEN = "Salads";
-    static String pastaEN = "Pasta";
-    static String meatsEN = "Meats";
-    static String fishesEN = "Fishes";
-    static String dessertsEN = "Desserts";
-    static String pizzaEN = "Pizza";
+    private static String startersEN = "Starters";
+    private static String soupsEN = "Soups";
+    private static String saladsEN = "Salads";
+    private static String pastaEN = "Pasta";
+    private static String meatsEN = "Meats";
+    private static String fishesEN = "Fishes";
+    private static String dessertsEN = "Desserts";
+    private static String pizzaEN = "Pizza";
 
     private static String reservations = "Rezerwacje";
     private static String orders = "Zamówienia";

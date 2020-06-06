@@ -18,7 +18,7 @@
     <string name="menu_pizza">Pizze</string>
     <string name="name_restaurant">Restauracja\nKornik</string>
     <string name="contact_name_restaurant">Restauracja Kornik</string>
-    <string name="contact_adr" translatable="false">ul. Szewska 27\n50–139 Wrocław</string>
+    <string name="contact_adr">ul. Szewska 27\n50–139 Wrocław</string>
     <string name="contact_hours_title">Godziny otwarcia</string>
     <string name="contact_hours">Poniedziałek – Piątek 9:00 – 22:00 Sobota i Niedziela 9:00 – 24:00</string>
     <string name="res_information">Dodatkowe informacje</string>

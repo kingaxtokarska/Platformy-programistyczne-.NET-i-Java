@@ -1,7 +1,6 @@
 package com.example.restauracja;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,18 +32,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
-import static com.example.restauracja.DatabaseHelper.desserts;
-import static com.example.restauracja.DatabaseHelper.fishes;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.pizza;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.soups;
-
-
-import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
 public class ReservationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -91,7 +81,7 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         for(int i = 0; i < getResources().getStringArray(R.array.Time).length; i++)
             if (!labels.contains(i)) list_time.add(getResources().getStringArray(R.array.Time)[i]);
 
-        ArrayAdapter<String> time = new ArrayAdapter<String>(ReservationActivity.this, R.layout.custom_spinner, list_time);
+        ArrayAdapter<String> time = new ArrayAdapter<>(ReservationActivity.this, R.layout.custom_spinner, list_time);
         time.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         res_time.setAdapter(time);
 
@@ -165,7 +155,7 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
                 for(int i = 0; i < getResources().getStringArray(R.array.Time).length; i++)
                     if (!labels.contains(i)) list_time.add(getResources().getStringArray(R.array.Time)[i]);
 
-                ArrayAdapter<String> time = new ArrayAdapter<String>(ReservationActivity.this, R.layout.custom_spinner, list_time);
+                ArrayAdapter<String> time = new ArrayAdapter<>(ReservationActivity.this, R.layout.custom_spinner, list_time);
                 time.setDropDownViewResource(R.layout.custom_spinner_dropdown);
                 res_time.setAdapter(time);
                 res_calendar.setText(date);
@@ -192,6 +182,22 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         Intent contact = new Intent(ReservationActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
+            case R.id.icon_pl:
+                //icon_pl
+                load_language("df");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.reservation);
+                setSupportActionBar(toolbar);
+                startActivity(reservation);
+                break;
+            case R.id.icon_uk:
+                //icon_uk
+                load_language("en");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.reservation);
+                setSupportActionBar(toolbar);
+                startActivity(reservation);
+                break;
             case R.id.home:
                 //home
                 startActivity(home);
@@ -286,6 +292,16 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void load_language (String languageToLoad){
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+        ReservationActivity.this.setContentView(R.layout.activity_reservation);
     }
 
 

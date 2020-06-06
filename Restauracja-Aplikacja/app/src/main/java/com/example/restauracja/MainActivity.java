@@ -15,16 +15,6 @@ import android.view.MenuItem;
 
 import java.util.Locale;
 
-
-import static com.example.restauracja.DatabaseHelper.soups;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.fishes;
-import static com.example.restauracja.DatabaseHelper.desserts;
-import static com.example.restauracja.DatabaseHelper.pizza;
-import static com.example.restauracja.DatabaseHelper.starters;
-
 public class MainActivity extends AppCompatActivity {
 
     public static String name_meal = "";
@@ -34,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //load_language("df");
 
         toolbar = findViewById(R.id.app_bar);
         toolbar.setTitle(R.string.home);

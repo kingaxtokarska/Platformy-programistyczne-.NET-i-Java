@@ -5,20 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import static com.example.restauracja.DatabaseHelper.desserts;
-import static com.example.restauracja.DatabaseHelper.fishes;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.pizza;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.soups;
+import java.util.Locale;
 
-import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
 public class ContactActivity extends AppCompatActivity {
@@ -53,6 +47,20 @@ public class ContactActivity extends AppCompatActivity {
         Intent contact = new Intent(ContactActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
+            case R.id.icon_pl:
+                //icon_pl
+                load_language("df");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.contact);
+                setSupportActionBar(toolbar);
+                break;
+            case R.id.icon_uk:
+                //icon_uk
+                load_language("en");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.contact);
+                setSupportActionBar(toolbar);
+                break;
             case R.id.home:
                 //home
                 startActivity(home);
@@ -122,4 +130,16 @@ public class ContactActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void load_language (String languageToLoad){
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+        ContactActivity.this.setContentView(R.layout.activity_contact);
+    }
+
+
 }

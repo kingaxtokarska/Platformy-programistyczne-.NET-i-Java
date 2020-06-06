@@ -20,24 +20,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static com.example.restauracja.DatabaseHelper.desserts;
-import static com.example.restauracja.DatabaseHelper.fishes;
-import static com.example.restauracja.DatabaseHelper.meats;
-import static com.example.restauracja.DatabaseHelper.pasta;
-import static com.example.restauracja.DatabaseHelper.pizza;
-import static com.example.restauracja.DatabaseHelper.salads;
-import static com.example.restauracja.DatabaseHelper.soups;
-
-import static com.example.restauracja.DatabaseHelper.starters;
 import static com.example.restauracja.MainActivity.name_meal;
 
 public class MenuActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     TextView menu_meal;
-    //GridView menu_names;
     DatabaseHelper db;
     ListView menu_names, menu_prices;
+    int num;
+    Integer []menu_meals = {R.string.menu_starters, R.string.menu_soups, R.string.menu_salads, R.string.menu_pasta,
+            R.string.menu_meats, R.string.menu_fishes, R.string.menu_desserts, R.string.menu_pizza};
+    String []meals_pl = {"Przystawki", "Zupy", "Sałatki", "Makarony", "Mięsa", "Ryby", "Desery", "Pizze"};
+    String []meals_en = {"Starters", "Soups", "Salads", "Pasta", "Meats", "Fishes", "Desserts", "Pizza"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +93,7 @@ public class MenuActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent menu = new Intent(MenuActivity.this, MenuActivity.class);
@@ -108,6 +104,36 @@ public class MenuActivity extends AppCompatActivity {
         Intent contact = new Intent(MenuActivity.this, ContactActivity.class);
         switch (item.getItemId())
         {
+            case R.id.icon_pl:
+                //icon_pl
+                for(int i = 0; i < meals_en.length; i++) {
+                    if(name_meal.equals(meals_en[i]) || name_meal.equals(meals_pl[i])) {
+                        num = i;
+                        break;
+                    }
+                }
+                load_language("df");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.menu);
+                setSupportActionBar(toolbar);
+                name_meal = getString(menu_meals[num]);
+                startActivity(menu);
+                break;
+            case R.id.icon_uk:
+                //icon_uk
+                for(int i = 0; i < meals_en.length; i++) {
+                    if(name_meal.equals(meals_en[i]) || name_meal.equals(meals_pl[i])) {
+                        num = i;
+                        break;
+                    }
+                }
+                load_language("en");
+                toolbar = findViewById(R.id.app_bar);
+                toolbar.setTitle(R.string.menu);
+                setSupportActionBar(toolbar);
+                name_meal = getString(menu_meals[num]);
+                startActivity(menu);
+                break;
             case R.id.home:
                 //home
                 startActivity(home);
@@ -177,5 +203,16 @@ public class MenuActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void load_language (String languageToLoad){
+        Locale locale = new Locale(languageToLoad);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+        MenuActivity.this.setContentView(R.layout.activity_menu);
+    }
+
 
 }
