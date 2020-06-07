@@ -59,6 +59,9 @@
     <string name="wTime">Waiting time:</string>
     <string name="del_mess_title">Thank you for your order!</string>
     <string name="del_mess_body">Details of the order:</string>
+    <string name="del_order_add"><u>Added to order:</u></string>
+    <string name="del_order_clear">Clear</string>
+    <string name="del_order_empty">-</string>
     <string name="description">
         The KORNIK restaurant offers the best culinary connections in the city.
         Inspired by traditional dishes from around the world, it takes its guests on a real journey of flavors.

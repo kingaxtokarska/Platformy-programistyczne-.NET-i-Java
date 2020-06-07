@@ -58,6 +58,9 @@
     <string name="wTime">Czas oczekiwania:</string>
     <string name="del_mess_title">Dziękujemy za złożenie zamówienia!</string>
     <string name="del_mess_body">Szczegóły zamówienia:</string>
+    <string name="del_order_add"><u>Dodane do zamówienia:</u></string>
+    <string name="del_order_clear">Wyczyść</string>
+    <string name="del_order_empty">-</string>
     <string name="description">
         Restauracja KORNIK oferuje najlepsze połączenia kulinarne w mieście.
         Inspirując się tradycyjnymi daniami z różnych stron świata, zabiera swoich gości w prawdziwą podróż smaków.

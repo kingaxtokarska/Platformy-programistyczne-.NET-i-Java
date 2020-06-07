@@ -57,8 +57,9 @@
 
             <EditText
                 android:id="@+id/del_starters"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -68,6 +69,16 @@
                 android:inputType="number"
                 android:hint="@string/del_num"
                 android:importantForAutofill="no" />
+
+            <Button
+                android:id="@+id/res_add_starters"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -87,8 +98,9 @@
 
             <EditText
                 android:id="@+id/del_soups"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -98,6 +110,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_soups"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -117,8 +139,9 @@
 
             <EditText
                 android:id="@+id/del_salads"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -128,6 +151,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_salads"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -147,8 +180,9 @@
 
             <EditText
                 android:id="@+id/del_pasta"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -158,6 +192,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_pasta"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -177,8 +221,9 @@
 
             <EditText
                 android:id="@+id/del_meats"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -188,6 +233,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_meats"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -207,8 +262,9 @@
 
             <EditText
                 android:id="@+id/del_fishes"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -218,6 +274,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_fishes"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -237,8 +303,9 @@
 
             <EditText
                 android:id="@+id/del_desserts"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -248,6 +315,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_desserts"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -267,8 +344,9 @@
 
             <EditText
                 android:id="@+id/del_pizza"
-                android:layout_weight="4"
+                android:layout_weight="2"
                 android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:padding="5dp"
                 android:background="@drawable/custom_border"
                 android:textColorHint="@color/Silver"
@@ -278,6 +356,16 @@
                 android:inputType="number"
                 android:importantForAutofill="no"
                 android:hint="@string/del_num" />
+
+            <Button
+                android:id="@+id/res_add_pizza"
+                android:layout_weight="2"
+                android:layout_marginStart="5dp"
+                android:foreground="@drawable/ic_plus_1"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute" />
 
         </TableRow>
 
@@ -289,15 +377,68 @@
 
 
             <TextView
-                android:id="@+id/TextView2"
+                android:id="@+id/TextView1.5"
                 android:layout_weight="1"
                 android:textColor="@color/White"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/del_adres_title" />
+                android:text="@string/del_order_add" />
 
         </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginBottom="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tv_orders"
+                android:layout_weight="1"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/del_order_empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:id="@+id/line_clear"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+
+            <Button
+                android:id="@+id/del_order_clear"
+                android:textColor="@color/White"
+                android:background="@drawable/custom_gradient"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/del_order_clear" />
+
+        </TableRow>
+
+        <TableRow
+        android:layout_weight="1"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/TextView2"
+            android:layout_weight="1"
+            android:textColor="@color/White"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/del_adres_title" />
+
+    </TableRow>
 
         <TableRow
             android:layout_weight="1"
@@ -659,7 +800,8 @@
                 android:layout_height="match_parent"
                 android:inputType="number"
                 android:importantForAutofill="no"
-                android:hint="@string/del_card_ccv" />
+                android:hint="@string/del_card_ccv"
+                tools:ignore="TooManyViews" />
 
         </TableRow>
 
@@ -677,7 +819,8 @@
                 android:background="@drawable/custom_gradient"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/del_order_btn" />
+                android:text="@string/del_order_btn"
+                tools:ignore="TooManyViews" />
 
         </TableRow>
 
