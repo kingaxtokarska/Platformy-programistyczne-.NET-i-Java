@@ -58,7 +58,7 @@ public class DeliveryActivity extends AppCompatActivity {
     Button btn_enter, del_order_clear;
     Button res_add_starters, res_add_soups, res_add_salads, res_add_pasta, res_add_meats, res_add_fishes, res_add_desserts, res_add_pizza;
     RadioGroup del_radio_group;
-    TextView del_order, tv_orders;
+    TextView del_order, tv_orders, del_payment;
     String[] parsedDistance = new String[1];
     String[] parsedDuration = new String[1];
     int sum = 0;
@@ -128,6 +128,7 @@ public class DeliveryActivity extends AppCompatActivity {
         btn_enter = findViewById(R.id.btn_enter);
         del_radio_group = findViewById(R.id.del_radio_group);
         del_order = findViewById(R.id.del_order);
+        del_payment = findViewById(R.id.TextView5);
 
         final Spinner[] tab_spinners = {spin1, spin2, spin3, spin4, spin5, spin6, spin7, spin8};
         final String[] tab_meals = {getString(R.string.menu_starters), getString(R.string.menu_soups), getString(R.string.menu_salads),
@@ -212,6 +213,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 card_line2.setVisibility(View.VISIBLE);
                 card_line3.setLayoutParams(tableRowParams);
                 card_line3.setVisibility(View.VISIBLE);
+                del_payment.setError(null);
             }
         });
 
@@ -227,6 +229,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 card_line2.setVisibility(View.INVISIBLE);
                 card_line3.setLayoutParams(tableRowParams);
                 card_line3.setVisibility(View.INVISIBLE);
+                del_payment.setError(null);
             }
         });
 
@@ -242,6 +245,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 card_line2.setVisibility(View.INVISIBLE);
                 card_line3.setLayoutParams(tableRowParams);
                 card_line3.setVisibility(View.INVISIBLE);
+                del_payment.setError(null);
             }
         });
 
@@ -460,7 +464,7 @@ public class DeliveryActivity extends AppCompatActivity {
         else j++;
         if(TextUtils.isEmpty(del_city.getText())) del_city.setError("Miasto jest wymagane!");
         else j++;
-        if(del_radio_group.getCheckedRadioButtonId() == -1) del_online.setError("Wybierz sposób płatności");
+        if(del_radio_group.getCheckedRadioButtonId() == -1) del_payment.setError("Wybierz sposób płatności");
         else j++;
         if(!(del_radio_group.getCheckedRadioButtonId() == -1))
         {
@@ -573,6 +577,8 @@ public class DeliveryActivity extends AppCompatActivity {
             tv_orders.setText(orders_prev + "+ " + tab_spinners[num].getSelectedItem().toString() + " x" + tab_edits[num].getText().toString() + "\n");
             tab_spinners[num].setSelection(0);
             tab_edits[num].setText(null);
+            del_order.setError(null);
+            tv_orders.setError(null);
         }
     }
 

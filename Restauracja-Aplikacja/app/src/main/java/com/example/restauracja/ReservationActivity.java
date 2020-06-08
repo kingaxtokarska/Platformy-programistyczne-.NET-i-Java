@@ -93,12 +93,7 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View v) {
                 boolean isCorrect;
-                if(TextUtils.isEmpty(res_name.getText())) res_name.setError("Imię jest wymagane!");
-                else if(TextUtils.isEmpty(res_surname.getText())) res_surname.setError("Nazwisko jest wymagane!");
-                else if(TextUtils.isEmpty(res_phone.getText())) res_phone.setError("Telefon jest wymagany!");
-                else if(res_time.getSelectedItem().toString().equals(getString(R.string.res_time))) ((TextView)res_time.getSelectedView()).setError("Wybierz godzinę");
-                else if(res_guests.getSelectedItem().toString().equals(getString(R.string.res_guests))) ((TextView)res_guests.getSelectedView()).setError("Podaj liczbę osób");
-                else {
+                if(check()) {
                     isCorrect = db.set_reservation(res_name.getText().toString(), res_surname.getText().toString(), res_prefix.getText().toString()
                                     + res_phone.getText().toString(), res_mail.getText().toString(), res_guests.getSelectedItem().toString(), res_calendar.getText().toString(),
                             res_time.getSelectedItem().toString(), res_inf.getText().toString());
@@ -302,6 +297,22 @@ public class ReservationActivity extends AppCompatActivity implements AdapterVie
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
         ReservationActivity.this.setContentView(R.layout.activity_reservation);
+    }
+
+    public boolean check ()
+    {
+        int j = 0;
+        if(TextUtils.isEmpty(res_name.getText())) res_name.setError("Imię jest wymagane!");
+        else j++;
+        if(TextUtils.isEmpty(res_surname.getText())) res_surname.setError("Nazwisko jest wymagane!");
+        else j++;
+        if(TextUtils.isEmpty(res_phone.getText())) res_phone.setError("Telefon jest wymagany!");
+        else j++;
+        if(res_time.getSelectedItem().toString().equals(getString(R.string.res_time))) ((TextView)res_time.getSelectedView()).setError("Wybierz godzinę");
+        else j++;
+        if(res_guests.getSelectedItem().toString().equals(getString(R.string.res_guests))) ((TextView)res_guests.getSelectedView()).setError("Podaj liczbę osób");
+        else j++;
+        return j == 5;
     }
 
 
